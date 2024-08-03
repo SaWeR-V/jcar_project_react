@@ -1,0 +1,233 @@
+.happy_clients_wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(200, 200, 200);
+    padding-top: 5rem;
+}
+
+.happy_clients {
+    max-width: 1235px;
+    width: 100%;
+    height: 80%;
+    border-radius: 25px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.happy_clients_header {
+    font-family: 'Gotham'; 
+    font-size: 32px;
+}
+
+.clients_carousel_controls {
+    position: absolute;
+    top: 93px;
+    width: 97%;
+    height: 85%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.clients_carousel_back_btn_area, .clients_carousel_next_btn_area {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.happy_clients_carousel_wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    /* background-color: var(--white-color); */
+    gap: 20px;
+    align-items: center;
+    align-self: center;
+    padding: 0px 25px 0px 10px;
+    /* box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5); */
+}
+
+.happy_client_card {
+    cursor: pointer;
+    flex: 0 0 100%;
+    max-width: calc((100% / 3) - 8px);
+    height: 85%;
+    outline: 1px solid var(--black-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    background-color: var(--white-color);
+    transition: .5s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+        translate: 0 -20px;
+
+        > .happy_client_photo_wrapper > .happy_client_photo {
+            opacity: 1;
+            filter: contrast(1.2);
+        }
+    }
+}
+
+.happy_client_photo_wrapper {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.like_a_clients {
+    padding: 10px;
+    background-color: var(--fill-color);
+    font-family: 'Gotham';
+    position: absolute;
+    top: 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--white-color);
+    align-self: center;
+    box-shadow: 0 0 8px 0px var(--fill-color);
+    transition: .3s;
+    z-index: 2;
+}
+
+.happy_client_photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.happy_client_info_block {
+    width: 100%;
+    height: 30%;
+    background-color: #bf0000;
+    border-top: 2px solid var(--black-color);
+    color: var(--white-color);
+}
+
+.happy_client_car_chars_block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 15px;
+}
+
+.car_name {
+    font-family: 'Gotham';
+    font-size: 24px;
+    text-align: center;
+}
+
+.car_char_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.car_chars {
+    display: flex;
+    gap: 15px;
+}
+
+.char {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Gotham';
+    font-size: 16px;
+}
+
+.type::before {
+    content: '';
+    display: block;
+    background: url(/svg/car.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.power::before {
+    content: '';
+    display: block;
+    background: url(/svg/power.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.engine::before {
+    content: '';
+    display: block;
+    background: url(/svg/engine.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.client_car_char_icon {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+@media (max-width: 1366px) {
+    .happy_clients_header {
+        font-size: 28px;
+    }
+
+    .happy_clients {
+        gap: 8px;
+        max-width: 1128px;
+        height: 90%;
+    }
+
+    .clients_carousel_controls {
+        width: 96%;
+        height: 74%;
+    }
+
+    .char {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .happy_clients {
+        gap: 5px;
+        max-width: 735px;
+        height: 85%;
+    }
+
+    .happy_client_card {
+        max-width: calc((100% / 2) - 4px);
+    }
+}
+
+@media (max-width: 425px) {
+    .happy_clients {
+        max-width: 425px;
+        height: 100%;
+    }
+}

@@ -1,0 +1,277 @@
+.about_us_wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+}
+
+.about_us_info_block {
+    display: flex;
+    gap: 25px;
+    width: 65%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.employers_cards_container {
+    width: 60%;
+    overflow: hidden;
+}
+
+.cards_wrapper {
+    display: flex;
+    background-color: var(--white-color);
+    border-radius: 15px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding: 20px;
+    position: relative;
+}
+
+.carousel_controls {
+    position: absolute;
+    top: 95px;
+    width: 450px;
+    height: 540px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.employers_back_btn_area, .employers_next_btn_area {
+    width: 50%;
+}
+
+.employers_back_btn_area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.employers_next_btn_area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.employers_back {
+    left: -24px;
+}
+
+.employers_next {
+    right: -24px;
+}
+
+.cards_container {
+    display: flex;
+    width: 450px;
+    height: 540px;
+    gap: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.employer_card {
+    flex: 0 0 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: .5s;
+}
+
+.card_ava {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.employer_info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    bottom: 0;
+    position: absolute;
+    color: var(--white-color);
+    font-family: 'Roboto';
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    justify-content: center;
+}
+
+.employer_name {
+    font-size: 28px;
+    text-align: center;
+}
+
+.employer_post {
+    font-size: 18px;
+}
+
+.card_position_btns_container {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 25px;
+}
+
+.card_position_btn {
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: .3s;
+
+    &:hover {
+        background-color: var(--fill-color);
+        opacity: 0.7;
+    }
+}
+
+.current_card {
+    background-color: var(--fill-color);
+    outline: 1px solid var(--fill-color);
+    outline-offset: 5px;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.who_are_we {
+    width: 40%;
+    background-color: var(--white-color);
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.about_us_header {
+    font-family: 'Gotham';
+    font-size: 32px;
+    align-self: flex-start;
+    text-shadow: 2px 0px 1px black;
+}
+
+.who_are_we_paragraph {
+    font-size: 18px;
+}
+
+@media (max-width: 1366px) {
+    .about_us_info_block {
+        width: 75%;
+        gap: 20px;
+        padding: 20px;
+        max-height: 650px;
+        margin-top: 0;
+    }
+
+    .about_us_header {
+        font-size: 28px;
+    }
+
+    .carousel_controls {
+        top: 75px;
+        width: 390px;
+        height: 465px;
+    }
+
+    .cards_wrapper {
+        gap: 25px;
+    }
+
+    .who_are_we {
+        gap: 18px;
+    }
+
+    .who_are_we_paragraph {
+        font-size: 15px;
+    }
+
+    .card_position_btns_container {
+        gap: 20px;
+    }
+    .card_position_btn {
+        width: 16px;
+        height: 16px;
+    }
+
+    .cards_container {
+        width: 385px;
+    }
+
+    .employer_name {
+        font-size: 24px;
+    }
+
+    .employer_post {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about_us_wrapper {
+        padding-top: 3rem;
+        height: auto;
+    }
+
+    .about_us_info_block {
+        flex-direction: column;
+        width: 80%;
+        max-height: none;
+    }
+
+    .about_us_header {
+        font-size: 36px;
+        align-self: center;
+    }
+
+    .cards_container {
+        width: 395px;
+    }
+
+    .employers_cards_container {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .who_are_we {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .about_us_info_block {
+        width: 90%;
+    }
+
+    .cards_container {
+        width: 300px;
+    }
+
+    .carousel_controls {
+        top: 90px;
+        width: 390px;
+        height: 540px;
+    }
+
+    .employers_back {
+        left: -14px;
+    }
+
+    .employers_next {
+        right: -14px;
+    }
+}

@@ -1,0 +1,302 @@
+.main_content_wrapper {
+    display: flex;
+    width: 65%;
+    position: relative;
+    z-index: 0;
+    background-color: rgba(95, 95, 95, 0.25);
+    padding: 20px;
+    border-radius: 20px;
+    max-height: 720px;
+}
+
+.autos {
+    width: 65%;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Gotham';
+    color: var(--white-color);
+    gap: 50px;
+    width: 50%;
+}
+
+.conditions_header {
+    font-size: 25px;
+    width: 85%;
+}
+
+.profit {
+    font-family: 'Gotham Bold';
+    color: var(--fill-color);
+    
+}
+
+.flags_container {
+    display: inline-flex;
+    gap: 25px;
+    width: 65%;
+    justify-content: space-between;
+}
+
+.flag {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.russia {
+    background-image: url(/svg/flag-russia.svg);
+}
+
+.china {
+    background-image: url(/svg/flag-china.svg);
+}
+
+.korea {
+    background-image: url(/svg/flag-south-korea.svg);
+}
+
+.japan {
+    background-image: url(/svg/flag-japan.svg);
+}
+
+.advantages_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Roboto';
+}
+
+.advantage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    > svg {
+        fill: rgb(255 207 0);
+    }
+}
+
+.messagers_contacts_wrapper {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.recall_form {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.recall_form_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: var(--white-color);
+    max-width: 485px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 35px;
+}
+
+.recall_form_header {
+    font-family: 'Gotham Bold';
+    font-weight: 600;
+    text-align: center;
+    font-size: 28px;
+    line-height: 30px;
+}
+
+.recall_form_annotation {
+    font-family: 'Roboto';
+    font-weight: 200;
+    font-size: 13.5px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.input_row {
+    font-family: 'Roboto';
+    font-weight: 300;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+
+    &:focus {
+        transition: .3s ease-in-out;
+        outline: 1px solid rgb(215 215 215);
+    }
+}
+
+.last_row {
+    height: 90px;
+    resize: none;
+    padding: 10px 15px;
+}
+
+.recall_from {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 15px;
+    accent-color: var(--fill-color);
+    margin-bottom: 10px;
+    gap: 12px;
+}
+
+.recall_from_items {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 10px;
+}
+
+.recall_from_item {
+    display: flex;
+    gap: 10px;
+}
+
+.recall_form_btn {
+    font-family: 'Gotham';
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: var(--fill-color);
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 16px;
+    width: 85%;
+    transition: .2s;
+
+    &:hover {
+        background-color: color-mix(in oklab, var(--fill-color) 90%, #000000 10%);
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+    }
+
+    &:active {
+        scale: 0.95;
+    }
+}
+
+.privacy_policy {
+    font-family: 'Roboto';
+    font-weight: 200;
+    font-size: 14px;
+    text-align: center;
+}
+
+.privacy_policy_link {
+    text-decoration: underline;
+    color: #000000;
+}
+
+@media (max-width: 1366px) {
+    .main_content_wrapper {
+        max-height: 620px;
+        width: 75%;
+    }
+
+    .conditions_header {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .flag {
+        width: 45px;
+        height: 45px;
+    }
+
+    .recall_form_wrapper {
+        max-width: 435px;
+        gap: 15px;
+    }
+
+    .recall_form_header {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .recall_form_annotation {
+        font-size: 12px;
+    }
+
+    .inputs {
+        gap: 12px;
+    }
+
+    .input_row {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .recall_form {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .privacy_policy {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main_content_wrapper {
+        width: 95%;
+        gap: 20px;
+        flex-direction: row-reverse;
+    }
+
+    .recall_form_btn {
+        width: 90%;
+    }
+
+    .conditions_header {
+        font-size: 25px;
+        width: 100%;
+        line-height: 35px;
+    }
+
+    .flags_container {
+        width: 85%;
+    }
+
+    .advantage {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 425px) {
+    .main_content_wrapper {
+        width: 90%;
+        gap: 20px;
+        flex-direction: column;
+        max-height: none;
+    }
+
+    .conditions {
+        width: 100%;
+    }
+
+    .recall_form {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,222 @@
+.header_wrapper {
+    width: 100%;
+    margin-top: 35px;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    transition: .3s ease-in;
+}
+
+.black_bg {
+    margin-top: 0;
+    padding: 10px 0;
+    backdrop-filter: blur(25px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header_container {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gotham';
+}
+
+.header_contacts {
+    display: flex;
+    color: var(--white-color);
+    gap: 15px;
+}
+
+.header_links {
+    font-size: 16px;
+    gap: 25px;
+    display: flex;
+}
+
+.logo_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background: url(/public/images/logo_transparent.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 160px;
+    height: 100px;
+}
+
+.contacts_block {
+    display: flex;
+    gap: 10px;
+}
+
+.list_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.item_string {
+    display: flex;
+    gap: 10px;
+    min-height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 252px;
+
+    &:hover:not(.messagers_block) > svg {
+        transition: .2s;
+        fill: var(--fill-color);
+    }
+
+    /* &.item_string > svg:hover {
+        fill: white;
+    } */
+}
+
+.more_contacts {
+    width: 60px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.show_more {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.messagers_block {
+    display: flex;
+    gap: 8px;
+}
+
+.link_item {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    position: relative;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+
+.active_link_item {
+    background-color: var(--fill-color);
+    transition: .3s;
+    border-radius: 24px 0px 0px 0px;
+}
+
+.link_triangle {
+    transform: rotate(-180deg);
+    transition: .5s;
+}
+
+.link_triangle_opened {
+    transform: rotate(0);
+    transition: .5s;
+}
+
+.messager_logo {
+    width: 22px;
+    height: 22px;
+}
+
+.tg_logo {
+    fill: var(--white-color);
+    height: 25px;
+}
+
+.whatsapp:hover {
+    fill: rgb(10, 211, 68);
+    transition: .2s;
+    scale: 1.5;
+}
+
+.tg:hover {
+    fill: rgb(51, 184, 255);
+    transition: .2s;
+    scale: 1.5;
+}
+
+.phone_number_watsapp {
+    color: rgb(10, 211, 68);
+}
+
+.phone_number_tg {
+    color: rgb(51, 184, 255);
+}
+
+@media (max-width: 1366px) {
+    .header_wrapper {
+        margin-top: 25px;
+    }
+    
+    .black_bg {
+        margin-top: 0;
+    }
+
+    .header_container {
+        width: 80%;
+    }
+
+    .logo {
+        width: 140px;
+        height: 85px;
+    }
+
+    .list_item {
+        font-size: 15px;
+    }
+
+    .item_string {
+        gap: 8px;
+        min-height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger_menu {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger_menu_top {
+        display: block;
+        width: 45px;
+        height: 5px;
+        background-color: var(--white-color);
+    }
+
+    .burger_menu_middle {
+        display: block;
+        width: 45px;
+        height: 5px;
+        background-color: var(--white-color);
+    }
+
+    .burger_menu_bottom {
+        display: block;
+        width: 45px;
+        height: 5px;
+        background-color: var(--white-color);
+    }
+}
+
+@media (max-width: 425px) {
+    .header_wrapper {
+        width: 100%;
+    }
+}
