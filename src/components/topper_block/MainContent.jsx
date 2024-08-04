@@ -10,7 +10,7 @@ export function MainContent() {
                     <p className="tag">#jcar25</p>
                 </aside> */}
                 <h1 className="conditions_header">
-                    Доставим автомобиль из Китая, Кореи или Японии в любую точку России с выгодой от <span className='profit'>250 000 &#8381;</span> с полным комплектом документов
+                    Доставим автомобиль из Китая, Кореи или Японии в любую точку России с выгодой от <br/><span className='profit'>250 000 &#8381;</span> с полным комплектом документов
                 </h1>
                 <div className='flags_container'>
                     <div className="flag russia"></div>

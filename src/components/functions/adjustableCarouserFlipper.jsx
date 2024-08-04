@@ -62,9 +62,6 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
                 isStartOrEnd();
             }
             else return;
-
-            console.log(remains)
-            console.log(counter, totalSteps)
         }
     // }
 
@@ -84,5 +81,12 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
                 next.classList.remove('hidden')
             }
         // }
+    }
+
+    if (window.outerWidth <= 768) {
+        cardCollection.forEach(card => {
+            card.ondragstart = () => console.log("drag_started")
+            // card.style.transform = `translateX(calc((-100%  * ${(counter - 1) * multiplier} - ${remains * 100}%) - ${gap * totalShowedCards}px`
+        })
     }
 }

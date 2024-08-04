@@ -227,7 +227,27 @@
 
 @media (max-width: 425px) {
     .happy_clients {
-        max-width: 425px;
+        max-width: 385px;
         height: 100%;
+    }
+
+    .happy_clients_header {
+        font-size: 32px;
+        text-align: center;
+        text-shadow: 2px 0px 1px black;
+    }
+
+    .happy_clients_carousel_wrapper {
+        padding: 0px 15px 0px 10px;
+    }
+
+    .happy_client_card {
+        max-width: 100%;
+    }
+
+    .clients_carousel_controls {
+        width: 98%;
+        height: 70%;
+        top: 145px;
     }
 }

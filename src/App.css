@@ -233,8 +233,12 @@ body::-webkit-scrollbar-thumb {
   animation: Smooth_enlargement .5s ease-in;
 }
 
-.scaling {
-  animation: Scaling .3s ease-in-out;
+.smooth_move_out {
+  animation: Smooth_move_out .3s ease-in-out;
+}
+
+.smooth_move_in {
+  animation: Smooth_move_in .3s forwards;
 }
 
 .hidden {
@@ -315,17 +319,20 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@keyframes Scaling {
+@keyframes Smooth_move_out {
   0% {
-    scale: 0.90;
+    max-width: 0;
   }
   100% {
-    scale: 1;
+    max-width: 750px;
   }
 }
 
-@media (max-width: 425px) {
-  body {
-    
+@keyframes Smooth_move_in {
+  0% {
+    max-width: 750px;
+  }
+  100% {
+    max-width: 0;
   }
 }

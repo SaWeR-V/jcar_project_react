@@ -11,7 +11,7 @@ export function HappyClients() {
         else if (window.outerWidth <= 768) {
             adjustableCarouselFlipper(2, 20, '.clients_back', '.clients_next', '.happy_client_card')
         }
-        else if (window.outerWidth <= 390) {
+        if (window.outerWidth <= 425) {
             adjustableCarouselFlipper(1, 20, '.clients_back', '.clients_next', '.happy_client_card')
         }
     }, [adjustableCarouselFlipper])

@@ -26,7 +26,7 @@ export function AboutUs() {
                         </div>
                         <div className="cards_container">
                             {employers.map((item, index) => (
-                                <div key={index} id={index} className="employer_card">
+                                <div key={index} id={index} className="employer_card" draggable>
                                     <img className="card_ava" src={item.ava} alt="Ava" />
                                     <div className='employer_info'>
                                         <h3 className='employer_name'>{item.full_name}</h3>

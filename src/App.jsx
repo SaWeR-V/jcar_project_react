@@ -1,20 +1,25 @@
 import { Routes, Route} from 'react-router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { icons } from './components/icons'
 import { WelcomeVideo } from './components/modal/WelcomeVideo'
 import { MainPage } from './components/routes/MainPage'
 import { AutosPage } from './components/routes/AutosPage'
 import { Header } from './components/header/Header'
-import { TopperBlock } from './components/topper_block/TopperBlock'
 
 import './App.css'
-import { MainContent } from './components/topper_block/MainContent'
-import { Autos } from './components/autos/Autos'
+
+// import { tabletLayout } from './components/functions/layouts/tabletLayout'
 
 function App() {
   const [helloBaner, setHelloBaner] = useState(true);
   const modal = document.getElementById('modal')
+
+  // useEffect(() => {
+  //   if (window.outerWidth <= 768) {
+  //       tabletLayout();
+  //   }
+  // })
 
   if (helloBaner && (!localStorage.getItem('jcar_welcome_video_viewed'))) {
     return (

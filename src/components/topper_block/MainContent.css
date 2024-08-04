@@ -160,6 +160,7 @@
     accent-color: var(--fill-color);
     margin-bottom: 10px;
     gap: 12px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .recall_from_items {
@@ -286,17 +287,65 @@
 @media (max-width: 425px) {
     .main_content_wrapper {
         width: 90%;
-        gap: 20px;
+        gap: 75px;
         flex-direction: column;
         max-height: none;
+        padding: 10px;
     }
 
     .conditions {
         width: 100%;
     }
 
+    .conditions_header {
+        font-size: 26px;
+        width: 100%;
+        line-height: 38px;
+    }
+
+    .flags_container {
+        width: 100%;
+    }
+
+    .advantages_list {
+        gap: 15px;
+    }
+
+    .advantage {
+        font-size: 16px;
+    }
+
     .recall_form {
         width: 100%;
         justify-content: center;
     }
+
+    .recall_form_header {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .recall_form_annotation {
+        font-size: 14px;
+    }
+
+    .recall_from {
+        margin-bottom: 25px;
+    }
+
+    .recall_form_btn {
+        padding: 15px;
+        width: 95%;
+        margin-bottom: 20px;
+    }
+
+    .privacy_policy {
+        font-size: 13px;
+    }
 }
+
+/* @media (max-width: 390px) {
+    .main_content_wrapper {
+        width: 85%;
+    }
+} */
