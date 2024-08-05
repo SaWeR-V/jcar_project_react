@@ -31,7 +31,7 @@
 }
 
 .header_links {
-    font-size: 16px;
+    font-size: 18px;
     gap: 25px;
     display: flex;
 }
@@ -52,33 +52,32 @@
 
 .contacts_block {
     display: flex;
-    gap: 10px;
+    gap: 25px;
 }
 
 .list_item {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .item_string {
     display: flex;
     gap: 10px;
     min-height: 30px;
-    justify-content: space-between;
     align-items: center;
-    min-width: 252px;
-
-    &:hover:not(.messagers_block) > svg {
-        transition: .2s;
-        fill: var(--fill-color);
-    }
-
-    /* &.item_string > svg:hover {
-        fill: white;
-    } */
+    min-width: 175px;
+    justify-content: flex-start;
+    font-family: 'Helvetica';
+    font-size: 20px;
 }
+
+.fill_red {
+    transition: .2s;
+    fill: var(--fill-color);
+}
+
 
 .more_contacts {
     width: 60px;
@@ -124,21 +123,8 @@
     transition: .5s;
 }
 
-.messager_logo {
-    width: 22px;
-    height: 22px;
-}
 
-.tg_logo {
-    fill: var(--white-color);
-    height: 25px;
-}
 
-.whatsapp:hover {
-    fill: rgb(10, 211, 68);
-    transition: .2s;
-    scale: 1.5;
-}
 
 .tg:hover {
     fill: rgb(51, 184, 255);
@@ -152,6 +138,62 @@
 
 .phone_number_tg {
     color: rgb(51, 184, 255);
+}
+
+.bottom_links {
+    position: fixed;
+    bottom: 0;
+    right: 30%;
+    z-index: 1;
+    display: flex;
+    gap: 25px;
+}
+
+.bottom_link {
+    cursor: pointer;
+    background-color: var(--white-color);
+    width: 50px;
+    height: 55px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    translate: 0 5px;
+    transition: .2s;
+}
+
+.bottom_link_redirector {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.messager_logo {
+    width: 25px;
+    height: 25px;
+}
+
+.whatsapp_label:hover {
+    translate: 0 0;
+    transition: .2s;
+
+
+    > .whatsapp {
+        fill: rgb(10, 211, 68);
+        transition: .2s;
+    }
+}
+
+.vk_label:hover {
+    translate: 0 0;
+    transition: .2s;
+
+    > .vk {
+        fill: rgb(0, 51, 161);
+        transition: .2s;
+    }
 }
 
 @media (max-width: 1366px) {

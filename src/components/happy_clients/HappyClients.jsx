@@ -24,7 +24,7 @@ export function HappyClients() {
     return (
         <section className="happy_clients_wrapper">
             <div className='happy_clients'>
-                <h1 className='happy_clients_header'>Люди, которых мы осчастливили...</h1>
+                <h1 className='happy_clients_header'>Наши клиенты</h1>
                 <div className="clients_carousel_controls">
                     <div className="clients_carousel_back_btn_area">
                         <button className="carousel_btn back clients_back"></button>

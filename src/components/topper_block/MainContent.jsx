@@ -1,16 +1,16 @@
 import './MainContent.css'
 import { sendMessage } from '../API/tg-bot/sendMessage'
 import { icons } from '../icons'
+import { useState } from 'react'
 
 export function MainContent() {
+    const [popupContent, setPopupContent] = useState(null)
+
     return (
         <div className="main_content_wrapper">
             <section className='conditions'>
-                {/* <aside>
-                    <p className="tag">#jcar25</p>
-                </aside> */}
                 <h1 className="conditions_header">
-                    Доставим автомобиль из Китая, Кореи или Японии в любую точку России с выгодой от <br/><span className='profit'>250 000 &#8381;</span> с полным комплектом документов
+                    Доставим автомобиль из Китая, Кореи или Японии в любую точку России с выгодой от <span className='profit'>250 000 &#8381;</span> с полным комплектом документов
                 </h1>
                 <div className='flags_container'>
                     <div className="flag russia"></div>
@@ -58,7 +58,7 @@ export function MainContent() {
                             </div>
                         </div>
 
-                        <button type="submit" className='recall_form_btn' onClick={sendMessage}>Запросить консультацию</button>
+                        <button type="submit" className='recall_form_btn' onClick={() => {sendMessage().then(() => setPopupContent(result))}}>Запросить консультацию</button>
                     </form>
                     <p className="privacy_policy">
                         Отправляя данные, вы соглашаетесь с нашей <br/><a className='privacy_policy_link'>политикой конфиденциальности</a>
