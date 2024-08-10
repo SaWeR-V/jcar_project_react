@@ -8,6 +8,7 @@ import { AutosPage } from './components/routes/AutosPage'
 import { Header } from './components/header/Header'
 
 import './App.css'
+import { MobileLayout } from './components/mobile_layout/MobileLayout'
 
 // import { tabletLayout } from './components/functions/layouts/tabletLayout'
 
@@ -32,6 +33,19 @@ function App() {
         </div>, modal)
     )
   }
+
+  if (window.outerWidth <= 425) {
+    return (
+      <>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<MobileLayout/>} />
+          <Route path='/autos' element={<AutosPage />} />
+        </Routes>
+      </>
+    )
+  }
+
   return (
     <>
       <Header/>

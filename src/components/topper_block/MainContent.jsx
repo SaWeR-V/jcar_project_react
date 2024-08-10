@@ -3,8 +3,23 @@ import { sendMessage } from '../API/tg-bot/sendMessage'
 import { icons } from '../icons'
 import { useState } from 'react'
 
+import { Popup } from '../popup/Popup'
+
 export function MainContent() {
-    const [popupContent, setPopupContent] = useState(null)
+    const [popupContent, setPopupContent] = useState(null);
+
+    function tgResponse(e) {
+        e.preventDefault();
+        
+        sendMessage().then(status => {
+            if (status === 200) {
+                setPopupContent({success: 'Запрос успешно отправлен - ожидайте звонка!'});
+            } else {
+                setPopupContent({error: 'Произошла ошибка при отправке запроса'});
+            }
+        })
+        
+    } 
 
     return (
         <div className="main_content_wrapper">
@@ -58,13 +73,14 @@ export function MainContent() {
                             </div>
                         </div>
 
-                        <button type="submit" className='recall_form_btn' onClick={() => {sendMessage().then(() => setPopupContent(result))}}>Запросить консультацию</button>
+                        <button type="submit" className='recall_form_btn' onClick={tgResponse}>Запросить консультацию</button>
                     </form>
                     <p className="privacy_policy">
-                        Отправляя данные, вы соглашаетесь с нашей <br/><a className='privacy_policy_link'>политикой конфиденциальности</a>
+                        Отправляя данные, вы соглашаетесь с <br/><a className='privacy_policy_link'>политикой конфиденциальности</a>
                     </p>
                 </div>
             </section>
+            <Popup content={popupContent} setPopupContent={setPopupContent}/>
         </div>
     )
 }

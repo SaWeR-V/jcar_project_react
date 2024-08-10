@@ -18,6 +18,12 @@
   src: url(/fonts/HelveticaNeue-Medium.otf);
 }
 
+@font-face {
+  font-family: 'Intro';
+  src: url(/fonts/IntroHeadR-Base.otf);
+}
+
+
 :root {
   --black-color: #000000;
   --white-color: #FFFFFF;
@@ -216,6 +222,8 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0 0 8px 0px var(--fill-color);
   transition: .3s;
 }
+
+
 
 .fade-in {
   animation: Fade-In 1s forwards;

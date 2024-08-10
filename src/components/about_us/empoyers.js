@@ -8,5 +8,10 @@ export const employers = [
         full_name: 'Николай Алексеевич Михеев',
         post: 'Менеджер по работе с клиентами',
         ava: '/images/employers/Niko.png'
+    },
+    {
+        full_name: 'Виктор Викторович Голубев',
+        post: 'Менеджер по работе с клиентами',
+        ava: '/images/employers/'
     }
 ]

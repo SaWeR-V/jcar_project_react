@@ -198,6 +198,11 @@
     &:active {
         scale: 0.95;
     }
+
+    &:disabled {
+        background-color: #adadad;
+        box-shadow: none;
+    }
 }
 
 .privacy_policy {

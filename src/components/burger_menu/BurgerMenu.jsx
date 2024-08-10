@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { icons } from "../icons";
 import { Link } from "react-router-dom";
 
-// import { Services } from "./Sevices";
 
 export function BurgerMenu({burgerStatus, setBurgerStatus}) {
     const [currentFilter, setFilter] = useState(null);
@@ -67,7 +66,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                     </li>
                 </ul>
                 <a className="burger_menu_whatsapp_link" href="https://chat.whatsapp.com/KxCG8Dzlztb2b7NoOPWIO1">
-                    <svg fill="white" width="32" height="32" viewbox="0 0 32 32">{icons.whatsapp}</svg>
+                    <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.whatsapp}</svg>
                     <p>WhatsApp - чат</p>
                 </a>
                 <ul className='burger_menu_links'>
