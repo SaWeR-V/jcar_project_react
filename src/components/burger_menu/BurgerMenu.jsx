@@ -1,3 +1,4 @@
+import './BurgerMenu.css'
 import { useEffect, useState } from "react";
 import { icons } from "../icons";
 import { Link } from "react-router-dom";

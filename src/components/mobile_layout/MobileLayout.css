@@ -50,7 +50,7 @@
     }
 }
 
-.mobile_section::before {
+/* .mobile_section::before {
     content: '';
     position: relative;
     display: block;
@@ -60,7 +60,7 @@
     border-radius: 5px;
     filter: blur(1px);
     background-color: var(--fill-color);
-}
+} */
 
 .mobile_recall_order {
     min-height: 100vh;
@@ -152,7 +152,7 @@
 .pagination_btn {
     background-color: rgb(195,195,195);
     border: none;
-    border-radius: 50%;
+    border-radius: 25%;
     width: 30px;
     height: 30px;
     transition: .3s;
@@ -195,7 +195,7 @@
 
 .mobile_employer_card {
     flex: 0 0 100%;
-    height: 620px;
+    height: 580px;
     transition: .3s;
     position: relative;
 }
@@ -250,4 +250,115 @@
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 18px;
+}
+
+.mobile_additional_cards_controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.mobile_employers_cards_controls_btn, .mobile_happy_clients_cards_controls_btn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Gotham';
+    opacity: 0.3;
+}
+
+.card_control_btn_active {
+    background-color: var(--fill-color);
+    color: var(--white-color);
+    opacity: 1;
+}
+
+.mobile_our_clients {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.mobile_our_clients_header {
+    position: absolute;
+    background-color: var(--fill-color);
+    font-family: 'Gotham';
+    top: 15%;
+    left: 0;
+    z-index: 1;
+    color: var(--white-color);
+    padding: 10px;
+}
+
+.mobile_our_clients_cards_container {
+    display: flex;
+    width: 90%;
+    overflow: hidden;
+    align-items: center;
+    border-radius: 35px;
+    border: 1px solid rgb(255 255 255 / 35%);
+}
+
+.mobile_happy_client_card {
+    flex: 0 0 100%;
+    height: 580px;
+    transition: .3s;
+    position: relative;
+}
+
+.mobile_happy_client_photo_wrapper {
+    height: 70%;
+}
+
+.mobile_happy_client_card_photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.mobile_happy_client_description_wrapper {
+    background-color: #393939;
+    color: var(--white-color);
+    height: 30%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 0 0 32px 32px;
+}
+
+.mobile_happy_client_car_chars {
+    display: flex;
+    gap: 10px;
+    font-family: 'Roboto';
+    justify-content: space-between;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.mobile_car_char {
+    display: flex;
+    align-items: center;
+}
+
+.mobile_happy_client_car_name {
+    font-family: 'Gotham';
+}
+
+.mobile_make_order {
+    padding: 10px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 12px;
+    background-color: var(--fill-color);
+    border: none;
+    color: var(--white-color);
+    align-self: center;
 }

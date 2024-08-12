@@ -1,15 +1,19 @@
 import './MobileLayout.css'
 import { sendMessage } from '../API/tg-bot/sendMessage'
 import { employers } from '../about_us/empoyers'
+import { happyClients } from '../happy_clients/ourClients'
 import { useEffect, useState } from 'react'
 import { slideSwiper } from '../functions/slideSwiper'
 import { Popup } from '../popup/Popup'
 import { checkInputs } from '../functions/checkInputs'
 import { aboutUsTxt } from './aboutUsTxt'
+import { RecallOrderModal } from '../modal/RecallOrderModal'
+import { icons } from '../icons'
 
 export function MobileLayout() {
     const [popupContent, setPopupContent] = useState(null);
-    const [visibleText, setVisibleText] = useState(0)
+    const [visibleText, setVisibleText] = useState(0);
+    const [modalStat, setModalStat] = useState(false);
 
     function tgResponse(e) {
         e.preventDefault();
@@ -35,10 +39,11 @@ export function MobileLayout() {
                 }
             })
         }
-    }, [visibleText])
+    })
 
     useEffect(() => {
-        slideSwiper()
+        slideSwiper('.mobile_employer_card', '.mobile_employers_cards_controls_btn');
+        slideSwiper('.mobile_happy_client_card', '.mobile_happy_clients_cards_controls_btn');
     });
 
     useEffect(() => {
@@ -113,9 +118,56 @@ export function MobileLayout() {
                         </div>
                     ))}
                 </div>
+                <div className="mobile_additional_cards_controls">
+                    {employers.map((employer, index) => (
+                            <button key={index} id={index} className='mobile_employers_cards_controls_btn'></button>
+                    ))}
+                </div>
+            </section>
+            <section className='mobile_our_clients'>
+                <h2 className='mobile_our_clients_header'>Наши клиенты</h2>
+                <div className='mobile_our_clients_cards_container'>
+                    {happyClients.map((elem, index) => (
+                        <div key={index} className='mobile_happy_client_card'>
+                            <div className="mobile_happy_client_photo_wrapper">
+                                <img src={elem.photo} alt={elem.car} className="mobile_happy_client_card_photo" />
+                            </div>
+                            <div className='mobile_happy_client_description_wrapper'>
+                                <div className="mobile_short_car_info">
+                                    <h2 className="mobile_happy_client_car_name">{elem.car}</h2>
+                                    <ul className="mobile_happy_client_car_chars">
+                                        <li className='mobile_car_char'>
+                                            {elem.type}
+                                        </li>
+                                        <li>
+                                            |
+                                        </li>
+                                        <li className='mobile_car_char'>
+                                            {elem.power} л.с. 
+                                        </li>
+                                        <li>
+                                            |
+                                        </li>
+                                        <li className='mobile_car_char'>
+                                            {elem.engine} л.
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <button className='mobile_make_order'>Хочу такую же!</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="mobile_additional_cards_controls">
+                    {happyClients.map((elem, index) => (
+                            <button key={index} id={index} className='mobile_happy_clients_cards_controls_btn'>{index + 1}</button>
+                    ))}
+                </div>
             </section>
 
             <Popup content={popupContent} setPopupContent={setPopupContent}/>
+            {modalStat === true ? <RecallOrderModal/> : null}
         </div>
     )
 }

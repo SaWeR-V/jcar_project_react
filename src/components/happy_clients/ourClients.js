@@ -22,7 +22,7 @@ export const happyClients = [
     },
     {
         car: "Toyota Allion",
-        type: "",
+        type: "Седан",
         power: 0,
         engine: 0,
         photo: "/images/clients/Toyota_Allion.jpg"

@@ -1,5 +1,6 @@
-export function slideSwiper() {
-    const cardsCollection = document.querySelectorAll('.mobile_employer_card');
+export function slideSwiper(cards, buttons) {
+    const cardsCollection = document.querySelectorAll(cards);
+    const cardsButtons = document.querySelectorAll(buttons);
 
     let counter = 0;
 
@@ -14,7 +15,11 @@ export function slideSwiper() {
 
     let isHorizontalSwipe = false;
 
-    cardsCollection.forEach(card => {
+    controlPositionCheck();
+    additionalCardsControls();
+    // autoSwipe();
+
+    cardsCollection.forEach((card, index) => {
 
         card.ontouchstart = (ev) => {
             initX = ev.touches[0].clientX;
@@ -41,22 +46,22 @@ export function slideSwiper() {
 
         card.ontouchend = (ev) => {
 
-            if (posX2 < -59) {
+            if (posX2 < -59 && counter !== cardsCollection.length - 1) {
                 counter++;
                 
                 cardsCollection.forEach(card => 
                     card.style.transform = `translateX(calc(-100% * ${counter}))`
                 )
-                
+                controlPositionCheck();
             }
 
-            else if (posX2 > 59) {
+            else if (posX2 > 59 && counter !== 0) {
                 counter--;
 
                 cardsCollection.forEach(card => 
                     card.style.transform = `translateX(calc(-100% * ${counter}))`
                 )
-                
+                controlPositionCheck();
             }
 
             else {
@@ -74,6 +79,45 @@ export function slideSwiper() {
             currentPos = 0;
             isHorizontalSwipe = false;
         }
-
     })  
+
+    function controlPositionCheck() {
+        cardsButtons.forEach(btn => {
+            if (counter === +btn.id) {
+                btn.classList.add('card_control_btn_active')
+            }
+            else {
+                btn.classList.remove('card_control_btn_active')
+            }
+        })
+    }
+
+    function additionalCardsControls() {
+        cardsButtons.forEach(btn => {
+            btn.onclick = () => {
+                counter = +btn.id;
+                cardsCollection.forEach(card => {
+                    card.style.transform = `translateX(calc(-100% * ${counter}))`
+                })
+
+                controlPositionCheck();
+            }
+        })
+    }
+
+    function autoSwipe() {
+        const int = setInterval(() => {
+            if (counter !== cardsCollection.length - 1) {
+                counter++;
+                cardsCollection.forEach(card => {
+                    card.style.transform = `translateX(calc(-100% * ${counter}))`
+                });
+                controlPositionCheck()
+            }
+            else {
+                clearInterval(int)
+            }
+        }, 4000)
+    }
+
 }
