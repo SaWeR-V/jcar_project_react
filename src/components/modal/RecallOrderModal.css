@@ -1,0 +1,96 @@
+.mobile_recall_order_window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    backdrop-filter: blur(5px);
+    animation: Fade-In .5s forwards;
+}
+
+.mobile_recall_order_frame {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+}
+
+.mobile_recall_order_window_close {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    right: 0;
+    background: none;
+    border: none;
+    align-self: flex-end;
+}
+
+.mobile_recall_form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding: 36px;
+    gap: 20px;
+}
+
+.mobile_recall_order_confirm {
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: rgb(65 65 65);
+}
+
+.mobile_modal_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.mobile_modal_input_row {
+    font-family: 'Roboto';
+    font-weight: 300;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.mobile_recall_from {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 18px;
+    accent-color: var(--fill-color);
+    margin-bottom: 20px;
+    gap: 12px;
+    color: rgb(65 65 65);
+}
+
+.mobile_car_name_confirm {
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.mobile_popup_recall_form_btn {
+    font-family: 'Gotham';
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    background-color: var(--fill-color);
+    color: var(--white-color);
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 18px;
+}

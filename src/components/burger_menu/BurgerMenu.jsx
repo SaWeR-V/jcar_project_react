@@ -9,7 +9,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
 
     useEffect(() => {
         const burgerBtn = document.querySelector('.burger_menu_btn')
-        const links = document.querySelectorAll('.link_item');
+        const links = document.querySelectorAll('.burger_menu_link_item');
         const block = document.querySelector('.burger_menu_block');
         
         links.forEach(link => {
@@ -68,16 +68,15 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 </ul>
                 <a className="burger_menu_whatsapp_link" href="https://chat.whatsapp.com/KxCG8Dzlztb2b7NoOPWIO1">
                     <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.whatsapp}</svg>
-                    <p>WhatsApp - чат</p>
                 </a>
                 <ul className='burger_menu_links'>
-                    <li className='link_item'>
+                    <li className='burger_menu_link_item'>
                         <a className='context_menu_link noselect'>Услуги</a>
                     </li>
-                    <li className='link_item'>
+                    <li className='burger_menu_link_item'>
                         <a className='context_menu_link noselect'>Информация</a>
                     </li>
-                    <li className='link_item'>
+                    <li className='burger_menu_link_item'>
                         <a href="#" className='context_menu_link'>Контакты</a>
                     </li>
                 </ul>

@@ -12,6 +12,6 @@ export const employers = [
     {
         full_name: 'Виктор Викторович Голубев',
         post: 'Менеджер по работе с клиентами',
-        ava: '/images/employers/'
+        ava: '/images/employers/Victor.png'
     }
 ]

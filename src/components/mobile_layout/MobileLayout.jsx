@@ -8,12 +8,13 @@ import { Popup } from '../popup/Popup'
 import { checkInputs } from '../functions/checkInputs'
 import { aboutUsTxt } from './aboutUsTxt'
 import { RecallOrderModal } from '../modal/RecallOrderModal'
-import { icons } from '../icons'
 
 export function MobileLayout() {
     const [popupContent, setPopupContent] = useState(null);
     const [visibleText, setVisibleText] = useState(0);
     const [modalStat, setModalStat] = useState(false);
+    const [choosenCar, setChoosenCar] = useState([]);
+    const [currentCard, setCurrentCard] = useState(0);
 
     function tgResponse(e) {
         e.preventDefault();
@@ -28,17 +29,14 @@ export function MobileLayout() {
 
     useEffect(() => {
         const text = document.querySelectorAll('.mobile_who_are_we_paragraph');
-        
-        if (text) {
-            text.forEach((el, index) => {
-                if (index === visibleText && el.classList.contains('hidden')) {
-                    el.classList.remove('hidden')
-                }
-                else {
-                    el.classList.add('hidden')
-                }
-            })
-        }
+        text.forEach((el, index) => {
+            if (index === visibleText && el.classList.contains('hidden')) {
+                el.classList.remove('hidden')
+            }
+            else {
+                el.classList.add('hidden')
+            }
+        })
     })
 
     useEffect(() => {
@@ -90,84 +88,137 @@ export function MobileLayout() {
                     </p>
                 </div>
             </section>
-            <section className='mobile_section mobile_about_us_text_wrapper'>
-                <h2 className='mobile_about_us_header'>О нас</h2>
-                <article className='mobile_about_us_text'>
+            <section className='mobile_section mobile_about_us_text_block'>
+                <div className="mobile_about_us_text_wrapper">
+                    <h2 className='mobile_about_us_header'>О нас</h2>
+                    <article className='mobile_about_us_text'>
                         {aboutUsTxt.map((elem, index) => (
-                            <p key={index} className={index === 0 ? 'mobile_who_are_we_paragraph' : 'mobile_who_are_we_paragraph hidden'}>{elem.p}</p>
+                            <p key={index} className='mobile_who_are_we_paragraph'>{elem.p}</p>
                         ))}
                         <div className="pagination_controls">
                             {aboutUsTxt.map((elem, index) => (
                                 <button key={index} id={index} onClick={() => setVisibleText(index)} className={index === visibleText ? 'pagination_btn pagination_active' : 'pagination_btn'}></button>
                             ))}
                         </div>
-                </article>
+                    </article>
+                </div>
             </section>
             <section className='mobile_section mobile_about_us_employers'>
-                <h2 className='mobile_about_us_employers_header'>Наша команда</h2>
-                <div className='mobile_about_us_photo_gallery_container'>
-                    {employers.map((employer, index) => (
-                        <div key={index} className="mobile_employer_card">
-                            <div className='mobile_employer_card_photo_wrapper'>
-                                <img className='mobile_employer_card_photo' src={employer.ava} alt={employer.full_name} />
+                <div className="mobile_about_us_employers_wrapper">
+                    <h2 className='mobile_about_us_employers_header'>Наша команда</h2>
+                    <div className='mobile_about_us_photo_gallery_container'>
+                        {employers.map((employer, index) => (
+                            <div key={index} className="mobile_employer_card">
+                                <div className='mobile_employer_card_photo_wrapper'>
+                                    <img className='mobile_employer_card_photo' src={employer.ava} alt={employer.full_name} />
+                                </div>
+                                <div className='mobile_employer_description_wrapper'>
+                                    <h2 className="mobile_employer_full_name">{employer.full_name}</h2>
+                                    <h3 className="mobile_employer_post">{employer.post}</h3>
+                                </div>
                             </div>
-                            <div className='mobile_employer_description_wrapper'>
-                                <h2 className="mobile_employer_full_name">{employer.full_name}</h2>
-                                <h3 className="mobile_employer_post">{employer.post}</h3>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mobile_additional_cards_controls">
-                    {employers.map((employer, index) => (
+                        ))}
+                    </div>
+                    <div className="mobile_additional_cards_controls">
+                        {employers.map((employer, index) => (
                             <button key={index} id={index} className='mobile_employers_cards_controls_btn'></button>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
             <section className='mobile_our_clients'>
-                <h2 className='mobile_our_clients_header'>Наши клиенты</h2>
-                <div className='mobile_our_clients_cards_container'>
-                    {happyClients.map((elem, index) => (
-                        <div key={index} className='mobile_happy_client_card'>
-                            <div className="mobile_happy_client_photo_wrapper">
-                                <img src={elem.photo} alt={elem.car} className="mobile_happy_client_card_photo" />
-                            </div>
-                            <div className='mobile_happy_client_description_wrapper'>
-                                <div className="mobile_short_car_info">
-                                    <h2 className="mobile_happy_client_car_name">{elem.car}</h2>
-                                    <ul className="mobile_happy_client_car_chars">
-                                        <li className='mobile_car_char'>
-                                            {elem.type}
-                                        </li>
-                                        <li>
-                                            |
-                                        </li>
-                                        <li className='mobile_car_char'>
-                                            {elem.power} л.с. 
-                                        </li>
-                                        <li>
-                                            |
-                                        </li>
-                                        <li className='mobile_car_char'>
-                                            {elem.engine} л.
-                                        </li>
-                                    </ul>
+                <div className="mobile_our_clients_wrapper">
+                    <h2 className='mobile_our_clients_header'>Наши клиенты</h2>
+                    <div className='mobile_our_clients_cards_container'>
+                        {happyClients.map((elem, index) => (
+                            <div key={index} className='mobile_happy_client_card'>
+                                <div className="mobile_happy_client_photo_wrapper">
+                                    <img src={elem.photo} alt={elem.car} className="mobile_happy_client_card_photo" />
+                                    {elem.video && <button className='mobile_happy_client_play_video' onClick={
+                                        (e) => {
+                                            
+
+                                            const mainBlock = e.target.closest('.mobile_happy_client_photo_wrapper');
+                                            const buttonPlay = mainBlock.querySelector('.mobile_happy_client_play_video');
+                                            buttonPlay.classList.add('hidden');
+                                            
+                                            const videoBox = document.createElement('video');
+                                            videoBox.className = 'mobile_happy_client_card_video fade-in';
+                                            videoBox.src = elem.video;
+                                            videoBox.autoplay = true;
+                                            videoBox.controls = true;
+                                            mainBlock.querySelector('.mobile_happy_client_card_photo').replaceWith(videoBox);
+                                            mainBlock.insertAdjacentHTML('afterbegin', `
+                                                    <button class="mobile_happy_client_card_video_close_btn"></button>
+                                            `)
+
+                                            const closeVideo = mainBlock.querySelector('.mobile_happy_client_card_video_close_btn');
+                                            const cardPhoto = document.createElement('img');
+                                            cardPhoto.src = elem.photo;
+                                            cardPhoto.className = 'mobile_happy_client_card_photo fade-in';
+                                            closeVideo.onclick = () => {
+                                                mainBlock.querySelector('.mobile_happy_client_card_video').replaceWith(cardPhoto);
+                                                buttonPlay.classList.remove('hidden');
+                                                closeVideo.remove();
+                                            };
+                                            
+                                        }
+                                    }/>}
                                 </div>
-                                
-                                <button className='mobile_make_order'>Хочу такую же!</button>
+                                <div className='mobile_happy_client_description_wrapper'>
+                                    <div className="mobile_short_car_info">
+                                        <h2 className="mobile_happy_client_car_name">{elem.car}</h2>
+                                        <ul className="mobile_happy_client_car_chars">
+                                            <li className='mobile_car_char'>
+                                                {elem.type}
+                                            </li>
+                                            <li>
+                                                |
+                                            </li>
+                                            <li className='mobile_car_char'>
+                                                {elem.power} л.с. 
+                                            </li>
+                                            <li>
+                                                |
+                                            </li>
+                                            <li className='mobile_car_char'>
+                                                {elem.engine} л.
+                                            </li>
+                                            <li>
+                                                |
+                                            </li>
+                                            <li className='mobile_car_char'>
+                                                {elem.transmission}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <button className='mobile_make_order' onClick={(e) => {
+                                        setModalStat(true);
+                                        const parentBlock = e.target.closest('.mobile_happy_client_description_wrapper').querySelector('.mobile_short_car_info');
+                                        const carChars = parentBlock.querySelectorAll('.mobile_car_char');
+                                        let charsString = '';
+                                        carChars.forEach(char => charsString += `${char.textContent}\n`)
+
+                                        setChoosenCar({
+                                            car_name: parentBlock.querySelector('.mobile_happy_client_car_name').textContent,
+                                            car_chars: charsString
+                                        });
+                                    }}>Хочу такую же!</button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mobile_additional_cards_controls">
-                    {happyClients.map((elem, index) => (
+                        ))}
+                    </div>
+                    <div className="mobile_additional_cards_controls">
+                        {happyClients.map((elem, index) => (
                             <button key={index} id={index} className='mobile_happy_clients_cards_controls_btn'>{index + 1}</button>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
 
             <Popup content={popupContent} setPopupContent={setPopupContent}/>
-            {modalStat === true ? <RecallOrderModal/> : null}
+            {modalStat === true ? <RecallOrderModal setModalStat={setModalStat} car={choosenCar} setChoosenCar={setChoosenCar}/> : null}
         </div>
     )
 }

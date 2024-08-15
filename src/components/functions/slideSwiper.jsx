@@ -17,7 +17,6 @@ export function slideSwiper(cards, buttons) {
 
     controlPositionCheck();
     additionalCardsControls();
-    // autoSwipe();
 
     cardsCollection.forEach((card, index) => {
 
@@ -103,21 +102,6 @@ export function slideSwiper(cards, buttons) {
                 controlPositionCheck();
             }
         })
-    }
-
-    function autoSwipe() {
-        const int = setInterval(() => {
-            if (counter !== cardsCollection.length - 1) {
-                counter++;
-                cardsCollection.forEach(card => {
-                    card.style.transform = `translateX(calc(-100% * ${counter}))`
-                });
-                controlPositionCheck()
-            }
-            else {
-                clearInterval(int)
-            }
-        }, 4000)
     }
 
 }
