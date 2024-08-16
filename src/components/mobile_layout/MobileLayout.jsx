@@ -14,11 +14,10 @@ export function MobileLayout() {
     const [visibleText, setVisibleText] = useState(0);
     const [modalStat, setModalStat] = useState(false);
     const [choosenCar, setChoosenCar] = useState([]);
-    const [currentCard, setCurrentCard] = useState(0);
 
     function tgResponse(e) {
         e.preventDefault();
-        sendMessage().then(status => {
+        sendMessage('bot_response').then(status => {
             if (status === 200) {
                 setPopupContent({success: 'Запрос успешно отправлен - ожидайте звонка!'});
             } else {
@@ -37,7 +36,7 @@ export function MobileLayout() {
                 el.classList.add('hidden')
             }
         })
-    })
+    }, [visibleText])
 
     useEffect(() => {
         slideSwiper('.mobile_employer_card', '.mobile_employers_cards_controls_btn');
@@ -45,7 +44,7 @@ export function MobileLayout() {
     });
 
     useEffect(() => {
-        checkInputs()
+        checkInputs('.recall_form_btn', '.input_row, .radio_option')
     });
 
     return (
@@ -65,7 +64,7 @@ export function MobileLayout() {
                             Отправьте нам заявку на интересующий вас автомобиль и мы с вами свяжемся в ближайшее время!
                         </p>
                     </article>
-                    <form className='inputs' id='bot_response' onInput={checkInputs}>
+                    <form className='inputs' id='bot_response' onInput={() => checkInputs('.recall_form_btn', '.input_row, .radio_option')}>
                         <input type="text" className="input_row" name="name" required placeholder='Ваше имя'/>
                         <input type="text" className="input_row" name="phone" required placeholder='Ваш номер телефона'/>
                         <textarea type="text" className="input_row last_row" name="comment" required placeholder='Желаемая марка, модель, год, объём двигателя и прочие комментарии'/>
@@ -137,7 +136,6 @@ export function MobileLayout() {
                                     {elem.video && <button className='mobile_happy_client_play_video' onClick={
                                         (e) => {
                                             
-
                                             const mainBlock = e.target.closest('.mobile_happy_client_photo_wrapper');
                                             const buttonPlay = mainBlock.querySelector('.mobile_happy_client_play_video');
                                             buttonPlay.classList.add('hidden');
@@ -150,18 +148,24 @@ export function MobileLayout() {
                                             mainBlock.querySelector('.mobile_happy_client_card_photo').replaceWith(videoBox);
                                             mainBlock.insertAdjacentHTML('afterbegin', `
                                                     <button class="mobile_happy_client_card_video_close_btn"></button>
-                                            `)
+                                            `);
 
                                             const closeVideo = mainBlock.querySelector('.mobile_happy_client_card_video_close_btn');
                                             const cardPhoto = document.createElement('img');
                                             cardPhoto.src = elem.photo;
                                             cardPhoto.className = 'mobile_happy_client_card_photo fade-in';
+
                                             closeVideo.onclick = () => {
                                                 mainBlock.querySelector('.mobile_happy_client_card_video').replaceWith(cardPhoto);
                                                 buttonPlay.classList.remove('hidden');
                                                 closeVideo.remove();
                                             };
                                             
+                                            videoBox.onended = () => {
+                                                mainBlock.querySelector('.mobile_happy_client_card_video').replaceWith(cardPhoto);
+                                                buttonPlay.classList.remove('hidden');
+                                                closeVideo.remove();
+                                            };
                                         }
                                     }/>}
                                 </div>
@@ -218,7 +222,7 @@ export function MobileLayout() {
             </section>
 
             <Popup content={popupContent} setPopupContent={setPopupContent}/>
-            {modalStat === true ? <RecallOrderModal setModalStat={setModalStat} car={choosenCar} setChoosenCar={setChoosenCar}/> : null}
+            {modalStat === true ? <RecallOrderModal setModalStat={setModalStat} car={choosenCar} setChoosenCar={setChoosenCar} setPopupContent={setPopupContent}/> : null}
         </div>
     )
 }

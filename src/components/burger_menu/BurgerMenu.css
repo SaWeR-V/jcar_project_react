@@ -96,6 +96,16 @@
     font-size: 23px;
 }
 
+.burger_menu_socials_links {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.burger_menu_social_link {
+    display: flex;
+}
+
 .burger_menu_links {
     font-size: 23px;
     gap: 36px;

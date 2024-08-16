@@ -9,6 +9,7 @@ import { Header } from './components/header/Header'
 
 import './App.css'
 import { MobileLayout } from './components/mobile_layout/MobileLayout'
+import { Footer } from './components/footer/Footer'
 
 // import { tabletLayout } from './components/functions/layouts/tabletLayout'
 
@@ -29,7 +30,7 @@ function App() {
           <button className="close_modal" onClick={() => {setHelloBaner(false); localStorage.setItem('jcar_welcome_video_viewed', 1)}}>
               <svg width='45' height='45' viewBox='0 0 24 24' fill='white'>{icons.cross}</svg>
           </button>
-          <WelcomeVideo />
+          <WelcomeVideo setHelloBaner={setHelloBaner}/>
         </div>, modal)
     )
   }
@@ -42,6 +43,7 @@ function App() {
           <Route path='/' element={<MobileLayout/>} />
           <Route path='/autos' element={<AutosPage />} />
         </Routes>
+        <Footer/>
       </>
     )
   }
@@ -53,6 +55,7 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/autos' element={<AutosPage />} />
       </Routes>
+      <Footer/>
     </>
     
   )

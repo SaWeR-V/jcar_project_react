@@ -1,6 +1,6 @@
-export function checkInputs() {
-    const button = document.querySelector('.recall_form_btn');
-    const inputs = document.querySelectorAll('.input_row, .radio_option');
+export function checkInputs(btnSubmit, inputsClassnames) {
+    const button = document.querySelector(btnSubmit);
+    const inputs = document.querySelectorAll(inputsClassnames);
 
     const allValid = Array.from(inputs).every(elem => {
         if (elem.type === 'radio') {

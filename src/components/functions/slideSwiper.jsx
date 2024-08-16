@@ -36,7 +36,7 @@ export function slideSwiper(cards, buttons) {
             if (Math.abs(posX2) > Math.abs(posY2)) {
                 isHorizontalSwipe = true;
                 posX2 < 0 ? card.style.transform = `translateX(calc(${currentPos}px - 60px))` : card.style.transform = `translateX(calc(${currentPos}px + 60px)`
-                ev.preventDefault(); 
+                if (ev.cancelable) ev.preventDefault();
             }
             else {
                 isHorizontalSwipe = false;

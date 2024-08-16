@@ -203,6 +203,10 @@
         background-color: #adadad;
         box-shadow: none;
     }
+
+    &:disabled:active {
+        scale: 1;
+    }
 }
 
 .privacy_policy {

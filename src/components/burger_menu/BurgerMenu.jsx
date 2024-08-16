@@ -66,13 +66,28 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                         </div>
                     </li>
                 </ul>
-                <a className="burger_menu_whatsapp_link" href="https://chat.whatsapp.com/KxCG8Dzlztb2b7NoOPWIO1">
-                    <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.whatsapp}</svg>
-                </a>
-                <ul className='burger_menu_links'>
-                    <li className='burger_menu_link_item'>
-                        <a className='context_menu_link noselect'>Услуги</a>
+                <ul className="burger_menu_socials_links">
+                    <li className="burger_menu_socials_item">
+                        <a href="https://vk.com/jcar_avto" className="burger_menu_social_link">
+                            <svg fill="white" width="32" height="32" viewBox="0 0 24 24">{icons.vk}</svg>
+                        </a>
                     </li>
+                    <li className="burger_menu_socials_item">
+                        <a href="https://t.me/jcar_avto" className="burger_menu_social_link">
+                            <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.tg}</svg>
+                        </a>
+                    </li>
+                    <li className="burger_menu_socials_item">
+                        <a href="https://chat.whatsapp.com/KxCG8Dzlztb2b7NoOPWIO1" className="burger_menu_social_link">
+                        <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.whatsapp}</svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul className='burger_menu_links'>
+                    {/* <li className='burger_menu_link_item'>
+                        <a className='context_menu_link noselect'>Услуги</a>
+                    </li> */}
                     <li className='burger_menu_link_item'>
                         <a className='context_menu_link noselect'>Информация</a>
                     </li>
@@ -82,7 +97,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 </ul>
             </div>
 
-            <div className={currentFilter === "Услуги" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
+            {/* <div className={currentFilter === "Услуги" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
                 <button className="burger_menu_goback" onClick={restoreBurgerMenu}>
                     <svg viewBox="0 0 24 24" width={30} height={30}>{icons.go_back}</svg>
                 </button>
@@ -101,7 +116,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                             <Link to={'/constructors'} className='burger_link' onClick={() => setBurgerStatus(false)}>Конструкторы</Link>
                         </li>
                     </ul>
-            </div>
+            </div> */}
 
             <div className={currentFilter === "Информация" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
                 <button className="burger_menu_goback" onClick={restoreBurgerMenu}>

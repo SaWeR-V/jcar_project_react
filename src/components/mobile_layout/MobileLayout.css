@@ -269,9 +269,11 @@
 }
 
 .mobile_additional_cards_controls {
-    margin-top: 20px;
+    margin: 20px 0;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mobile_employers_cards_controls_btn, .mobile_happy_clients_cards_controls_btn {

@@ -1,24 +1,17 @@
 import axios from "axios";
 
-export async function sendMessage() {
+export async function sendMessage(formId) {
 
-    const TOKEN = process.env.REACT_APP_TELEGRAM_TOKEN; 
-    const CHAT_ID = process.env.REACT_APP_CHAT_ID;
-    const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+    const form = document.getElementById(formId);
 
-    const form = document.getElementById('bot_response');
+    const data = {
+        radioOption: form.radio_option.value,
+        name: form.name.value,
+        phone: form.phone.value,
+        comment: form.comment.value
+    };
 
-    let message = `<b>Заявка с сайта</b>\n`;
-    message += `<b>Откуда обратились: </b>${form.radio_option.value}\n`
-    message += `<b>Отправитель: </b>${form.name.value}\n`
-    message += `<b>Телефон: </b>${form.phone.value}\n`
-    message += `<b>Комментарий: </b>${form.comment.value}\n`
-
-    return axios.post(URI_API, {
-        chat_id: CHAT_ID,
-        parse_mode: 'html',
-        text: message
-    })
+    return axios.post('http://192.168.0.101:5000/api/sendMessage', data)
     .then(response => {
         return response.status;
     })

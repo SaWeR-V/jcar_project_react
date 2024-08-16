@@ -1,22 +1,29 @@
+import './RecallOrderModal.css'
 import { icons } from '../icons';
 import { sendMessage } from '../API/tg-bot/sendMessage';
-import './RecallOrderModal.css'
-
 import { createPortal } from "react-dom";
+import { useEffect } from 'react';
+import { checkInputs } from '../functions/checkInputs';
 
-export function RecallOrderModal({setModalStat, car, setChoosenCar}) {
+
+export function RecallOrderModal({setModalStat, car, setChoosenCar, setPopupContent}) {
     const modal = document.getElementById('modal');
 
     function tgResponse(e) {
         e.preventDefault();
-        sendMessage().then(status => {
+        sendMessage('bot_response_modal').then(status => {
             if (status === 200) {
                 setPopupContent({success: 'Запрос успешно отправлен - ожидайте звонка!'});
             } else {
                 setPopupContent({error: 'Произошла ошибка при отправке запроса'});
             }
+            setModalStat(false);
         })
     };
+
+    useEffect(() => {
+        checkInputs('.mobile_popup_recall_form_btn', '.mobile_modal_input_row, .modal_radio_option')
+    });
 
     return (
         createPortal(
@@ -29,19 +36,19 @@ export function RecallOrderModal({setModalStat, car, setChoosenCar}) {
                             <p className='mobile_recall_order_confirm'>
                                 Вы собираетесь заказать доставку <span className='mobile_car_name_confirm'>{car.car_name}</span>.<br/>Просьба указать ваше имя и контактный телефон - мы скоро вам перезвоним!
                             </p>
-                            <form className='mobile_modal_inputs' id='bot_response'>
+                            <form className='mobile_modal_inputs' id='bot_response_modal' onInput={() => checkInputs('.mobile_popup_recall_form_btn', '.mobile_modal_input_row, .modal_radio_option')}>
                                 <input type="text" className="mobile_modal_input_row" name="name" required placeholder='Ваше имя'/>
                                 <input type="text" className="mobile_modal_input_row" name="phone" required placeholder='Ваш номер телефона'/>
-                                <textarea type="text" className="hidden" name="comment" value={`${car.car_name} ${car.car_chars.trim()}`} readOnly/>
+                                <textarea type="text" className="hidden" name="comment" value={`\n${car.car_name}\n\n******\n\n${car.car_chars.trim()}`} readOnly/>
 
                                 <div className='mobile_recall_from'>
                                     <p>Укажите, откуда вам перезвонить?</p>
                                     <div className="recall_from_items">
                                         <label className='recall_from_item'>
-                                            <input type="radio" name="radio_option" id="radioVladivostok" value='Владивосток' required/>Владивосток
+                                            <input className="modal_radio_option" type="radio" name="radio_option" id="radioVladivostok" value='Владивосток' required/>Владивосток
                                         </label>
                                         <label className='recall_from_item'>
-                                            <input type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
+                                            <input className="modal_radio_option" type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
                                         </label>
                                     </div>
                                 </div>
