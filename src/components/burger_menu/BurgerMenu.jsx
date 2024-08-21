@@ -47,33 +47,36 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
         <div className={burgerStatus === false ? "burger_menu smooth_move_out hidden" : "burger_menu smooth_move_out"}>
             <div className="burger_menu_block fade-in">
                 <ul className="burger_menu_list">
-                    <li className='list_item'>
+                    <li className='burger_menu_list_item'>
                         <h3>Владивосток</h3>
-                        <div className='item_string'>
+                        <div className='burger_menu_item_string'>
                             <a className="phone_number_link" href='tel:+79024867563'>+7 902 486-75-63</a>
                         </div>
-                        <div className='item_string'>
+                        <div className='burger_menu_item_string'>
                             <a className="phone_number_link" href='tel:+79240023200'>+7 924 002-32-00</a>
                         </div>
                     </li>
-                    <li className='list_item'>
+                    <li className='burger_menu_list_item'>
                         <h3>Сочи</h3>
-                        <div className='item_string'>
+                        <div className='burger_menu_item_string'>
                             <a className="phone_number_link" href='tel:+79873636788'>+7 987 363-67-88</a>
                         </div>
-                        <div className='item_string'>
+                    </li>
+                    <li className='burger_menu_list_item'>
+                        <h3>Краснодар</h3>
+                        <div className='burger_menu_item_string'>
                             <a className="phone_number_link" href='tel:+79897519091'>+7 989 751-90-91</a>
                         </div>
                     </li>
                 </ul>
                 <ul className="burger_menu_socials_links">
                     <li className="burger_menu_socials_item">
-                        <a href="https://vk.com/jcar_avto" className="burger_menu_social_link">
+                        <a href="https://vk.com/llc_jcar" className="burger_menu_social_link">
                             <svg fill="white" width="32" height="32" viewBox="0 0 24 24">{icons.vk}</svg>
                         </a>
                     </li>
                     <li className="burger_menu_socials_item">
-                        <a href="https://t.me/jcar_avto" className="burger_menu_social_link">
+                        <a href="https://t.me/llc_jcar" className="burger_menu_social_link">
                             <svg fill="white" width="32" height="32" viewBox="0 0 32 32">{icons.tg}</svg>
                         </a>
                     </li>

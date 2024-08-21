@@ -5,7 +5,6 @@
     z-index: 3;
     display: flex;
     justify-content: center;
-    top: 0;
     transition: .3s ease-in;
 }
 
@@ -42,7 +41,7 @@
 }
 
 .logo {
-    background: url(/public/images/logo_transparent.png);
+    background: url(/images/logo_transparent.png);
     background-size: contain;
     background-repeat: no-repeat;
     display: block;
@@ -52,7 +51,8 @@
 
 .contacts_block {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 30px;
 }
 
 .list_item {
@@ -67,10 +67,10 @@
     gap: 10px;
     min-height: 30px;
     align-items: center;
-    min-width: 175px;
+    min-width: 160px;
     justify-content: flex-start;
     font-family: 'Helvetica';
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .fill_red {
@@ -122,20 +122,6 @@
     transition: .5s;
 }
 
-.tg:hover {
-    fill: rgb(51, 184, 255);
-    transition: .2s;
-    scale: 1.5;
-}
-
-.phone_number_watsapp {
-    color: rgb(10, 211, 68);
-}
-
-.phone_number_tg {
-    color: rgb(51, 184, 255);
-}
-
 .bottom_links {
     position: fixed;
     bottom: 0;
@@ -157,6 +143,7 @@
     position: relative;
     translate: 0 5px;
     transition: .2s;
+    border: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .bottom_link_redirector {
@@ -187,9 +174,20 @@
     transition: .2s;
 
     > .vk {
-        fill: rgb(0, 51, 161);
+        fill: rgb(89,125,163);
         transition: .2s;
     }
+}
+
+.tg_label:hover {
+    translate: 0 0;
+    transition: .2s;
+
+    > .telegram {
+        fill: rgb(51, 184, 255);
+        transition: .2s;
+    }
+    
 }
 
 @media (max-width: 1366px) {
@@ -210,12 +208,22 @@
         height: 85px;
     }
 
+    .contacts_block {
+        gap: 18px;
+    }
+
     .list_item {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .item_string {
         gap: 8px;
         min-height: 25px;
+        font-size: 16px;
+    }
+
+    .header_links {
+        font-size: 16px;
+        gap: 20px;
     }
 }

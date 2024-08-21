@@ -1,9 +1,10 @@
 import './MainContent.css'
 import { sendMessage } from '../API/tg-bot/sendMessage'
 import { icons } from '../icons'
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
 import { Popup } from '../popup/Popup'
+import { checkInputs } from '../functions/checkInputs'
+
 
 export function MainContent() {
     const [popupContent, setPopupContent] = useState(null);
@@ -11,7 +12,7 @@ export function MainContent() {
     function tgResponse(e) {
         e.preventDefault();
         
-        sendMessage().then(status => {
+        sendMessage('bot_response').then(status => {
             if (status === 200) {
                 setPopupContent({success: 'Запрос успешно отправлен - ожидайте звонка!'});
             } else {
@@ -21,11 +22,15 @@ export function MainContent() {
         
     } 
 
+    useEffect(() => {
+        checkInputs('.recall_form_btn', '.input_row, .radio_option')
+    },[])
+
     return (
         <div className="main_content_wrapper">
             <section className='conditions'>
                 <h1 className="conditions_header">
-                    Доставим автомобиль из Китая, Кореи или Японии в любую точку России с выгодой от <span className='profit'>250 000 &#8381;</span> с полным комплектом документов
+                    Доставим автомобиль из Японии, Кореи или Китая в любую точку России с выгодой от <span className='profit'>250 000 &#8381;</span> с полным комплектом документов
                 </h1>
                 <div className='flags_container'>
                     <div className="flag russia"></div>
@@ -56,7 +61,7 @@ export function MainContent() {
                             Отправьте нам заявку на интересующий вас автомобиль и мы с вами свяжемся в ближайшее время!
                         </p>
                     </article>
-                    <form className='inputs' id='bot_response'>
+                    <form className='inputs' id='bot_response' onInput={() => checkInputs('.recall_form_btn', '.input_row, .radio_option')}>
                         <input type="text" className="input_row" name="name" required placeholder='Ваше имя'/>
                         <input type="text" className="input_row" name="phone" required placeholder='Ваш номер телефона'/>
                         <textarea type="text" className="input_row last_row" name="comment" required placeholder='Желаемая марка, модель, год, объём двигателя и прочие комментарии'/>
@@ -65,10 +70,10 @@ export function MainContent() {
                             <p>Укажите, откуда вам перезвонить?</p>
                             <div className="recall_from_items">
                                 <label className='recall_from_item'>
-                                    <input type="radio" name="radio_option" id="radioVladivostok" value='Владивосток' required/>Владивосток
+                                    <input className="radio_option" type="radio" name="radio_option" id="radioVladivostok" value='Владивосток' required/>Владивосток
                                 </label>
                                 <label className='recall_from_item'>
-                                    <input type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
+                                    <input className="radio_option" type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
                                 </label>
                             </div>
                         </div>

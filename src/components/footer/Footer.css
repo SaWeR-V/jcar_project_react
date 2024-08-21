@@ -10,7 +10,7 @@
 
 .footer_content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 25px;
     width: 90%;
     padding-top: 24px;
@@ -38,6 +38,19 @@
     gap: 36px;
     flex-direction: row;
     font-size: 18px;
+    flex-wrap: wrap;
+}
+
+.footer_phone_number_link:hover {
+    transition: .3s;
+    color: #d7d7d7;
+}
+
+.footer_social_link:hover {
+    > svg {
+        transition: .3s;
+        fill:#d7d7d7;
+    }
 }
 
 .footer_phone_numbers_list_item {
@@ -82,4 +95,32 @@
 
 .t_link {
     color: var(--fill-color);
+}
+
+@media (max-width:425px) {
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .footer_phone_number_link:hover {
+        color: #6b6b6b;
+    }
+
+    .footer_social_link:hover {
+        > svg {
+            fill:#6b6b6b;
+        }
+    }
+
+    .footer_phone_number_link:active {
+        transition: .3s;
+        color: #d7d7d7;
+    }
+    
+    .footer_social_link:active {
+        > svg {
+            transition: .3s;
+            fill:#d7d7d7;
+        }
+    }
 }

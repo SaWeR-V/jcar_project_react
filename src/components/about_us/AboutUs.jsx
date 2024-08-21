@@ -1,14 +1,14 @@
+import { employersCarouselFlipper } from '../functions/employersCarouselFlipper'
 import './AboutUs.css'
 import { employers } from './empoyers'
-import { useState, useEffect } from 'react'
-import { employersCarouselFlipper } from '../functions/employersCarouselFlipper';
+import { useEffect } from 'react'
+
 
 export function AboutUs() {
-    const [isHovered, setHovered] = useState(null);
-
+    
     useEffect(() => {
-        employersCarouselFlipper()
-    }, [employersCarouselFlipper])
+        employersCarouselFlipper();
+    },[])
 
     return (
         <section className="about_us_wrapper">
@@ -17,17 +17,19 @@ export function AboutUs() {
                     <div className='cards_wrapper'>
                         <h1 className='about_us_header'>Наша команда</h1>
                         <div className="carousel_controls">
-                            <div className='employers_back_btn_area' onMouseOver={() => setHovered('back')} onMouseLeave={() => setHovered(null)}>
-                                <button className={isHovered === 'back' ? 'carousel_btn back employers_back' : 'carousel_btn back employers_back invisible'}/>
+                            <div className='employers_back_btn_area'>
+                                <button className='carousel_btn back employers_back'/>
                             </div>
-                            <div className='employers_next_btn_area' onMouseOver={() => setHovered('next')} onMouseLeave={() => setHovered(null)}>
-                                <button className={isHovered === 'next' ? 'carousel_btn next employers_next' : 'carousel_btn next employers_next invisible'}/>
+                            <div className='employers_next_btn_area'>
+                                <button className='carousel_btn next employers_next'/>
                             </div>
                         </div>
                         <div className="cards_container">
                             {employers.map((item, index) => (
-                                <div key={index} id={index} className="employer_card" draggable>
-                                    <img className="card_ava" src={item.ava} alt="Ava" />
+                                <div key={index} id={index} className="employer_card">
+                                    <div className="employer_card_ava_wrapper">
+                                        <img className="card_ava" src={item.ava} alt="Ava" />
+                                    </div>
                                     <div className='employer_info'>
                                         <h3 className='employer_name'>{item.full_name}</h3>
                                         <p className="employer_post">{item.post}</p>

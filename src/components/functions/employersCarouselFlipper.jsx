@@ -8,10 +8,11 @@ export function employersCarouselFlipper() {
     const next = document.querySelector('button.next');
 
     if (back && next && cardsCollection && cardsIndicators) {
+        isStartOrEnd();
         checkMarker();
 
         cardsCollection.forEach(card => {
-            card.ondrag = () => `translateX(calc(-100% * ${counter} - 25px * ${counter}))`;
+            card.ondrag = () => `translateX(calc(-100% * ${counter})`;
         });
 
 
@@ -19,11 +20,11 @@ export function employersCarouselFlipper() {
             if (counter !== 0) {
                 counter--;
                 cardsCollection.forEach(card => {
-                    card.style.transform = `translateX(calc(-100% * ${counter} - 25px * ${counter}))`;
+                    card.style.transform = `translateX(calc(-100% * ${counter})`;
                 });
 
-                addFadeIn();
                 checkMarker();
+                isStartOrEnd()
             }
             else return;
 
@@ -32,11 +33,11 @@ export function employersCarouselFlipper() {
             if (counter < cardsCollection.length - 1) {
                 counter++;
                 cardsCollection.forEach(card => {
-                    card.style.transform = `translateX(calc(-100% * ${counter} - 25px * ${counter}))`;
+                    card.style.transform = `translateX(calc(-100% * ${counter})`;
                 })
 
-                addFadeIn();
                 checkMarker();
+                isStartOrEnd()
             } 
             else return;
                 
@@ -51,26 +52,34 @@ export function employersCarouselFlipper() {
             })
         }
 
-        function addFadeIn() {
-            employerInfo.forEach(elem => {
-                elem.classList.add('fade-in');
-                setTimeout(() => elem.classList.remove('fade-in'), 500);
-            })
-        }
-
-
         cardsIndicators.forEach(elem => {
             elem.onclick = () => {
                 if (counter === +elem.id) return;
                 
                 counter = +elem.id;
                 cardsCollection.forEach(card => {
-                    card.style.transform = `translateX(calc(-100% * ${counter} - 25px * ${counter}))`;
+                    card.style.transform = `translateX(calc(-100% * ${counter})`;
                 });
-                addFadeIn();
+       
                 checkMarker();
             }
         })
         
     }
+
+    function isStartOrEnd() {
+        if (counter === 0) {
+            back.classList.add('hidden')
+        } 
+        else {
+            back.classList.remove('hidden')
+        }
+
+        if (counter === cardsCollection.length - 1) {
+            next.classList.add('hidden')
+        } 
+        else {
+            next.classList.remove('hidden')
+        }
+}
 }

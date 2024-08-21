@@ -18,7 +18,7 @@ export function ModalFrame({ parent, servicesModal, infoModal }) {
                             <Link to={'/motorcycles'} className='services_link'>Мотоциклы</Link>
                         </li>
                         <li className='services_item'>
-                            <Link to={'/special_equipment'} className='services_link'>Спецтехника</Link>
+                            <Link to={'/special_vehicles'} className='services_link'>Спецтехника</Link>
                         </li>
                         <li className='services_item'>
                             <Link to={'/constructors'} className='services_link'>Конструкторы</Link>

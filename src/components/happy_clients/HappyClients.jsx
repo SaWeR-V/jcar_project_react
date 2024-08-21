@@ -1,9 +1,15 @@
 import './HappyClients.css'
 import { happyClients } from './ourClients'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { adjustableCarouselFlipper } from '../functions/adjustableCarouserFlipper'
+import { RecallOrderModal } from '../modal/RecallOrderModal'
+import { Popup } from '../popup/Popup'
 
 export function HappyClients() {
+    const [modalStat, setModalStat] = useState(false);
+    const [popupContent, setPopupContent] = useState(null);
+    const [choosenCar, setChoosenCar] = useState([]);
+
     useEffect(() => {
         if (window.outerWidth > 768) {
             adjustableCarouselFlipper(3, 20, '.clients_back', '.clients_next', '.happy_client_card')
@@ -11,10 +17,7 @@ export function HappyClients() {
         else if (window.outerWidth <= 768) {
             adjustableCarouselFlipper(2, 20, '.clients_back', '.clients_next', '.happy_client_card')
         }
-        if (window.outerWidth <= 425) {
-            adjustableCarouselFlipper(1, 20, '.clients_back', '.clients_next', '.happy_client_card')
-        }
-    }, [adjustableCarouselFlipper])
+    }, [])
 
     const photosContainer = document.querySelector('.happy_clients_carousel_wrapper');
     if (photosContainer && happyClients.length < 3) {
@@ -47,25 +50,75 @@ export function HappyClients() {
                             }}
                         >
                             <div className="happy_client_photo_wrapper">
-                                <span className='like_a_clients invisible'>Хочу такую!</span>
                                 <img className="happy_client_photo"  src={item.photo} alt={item.car} loading='lazy'/>
+                                {item.video && <button className='happy_client_play_video'
+                                    onClick={
+                                        (e) => {
+                                            e.stopPropagation();
+                                            const mainBlock = e.target.closest('.happy_client_photo_wrapper');
+                                            const buttonPlay = mainBlock.querySelector('.happy_client_play_video');
+                                            buttonPlay.classList.add('hidden');
+                                            
+                                            const videoBox = document.createElement('video');
+                                            videoBox.className = 'happy_client_card_video fade-in';
+                                            videoBox.src = item.video;
+                                            videoBox.autoplay = true;
+                                            videoBox.controls = true;
+                                            mainBlock.querySelector('.happy_client_photo').replaceWith(videoBox);
+                                            mainBlock.insertAdjacentHTML('afterbegin', `
+                                                    <button class="happy_client_card_video_close_btn"></button>
+                                            `);
+
+                                            const closeVideo = mainBlock.querySelector('.happy_client_card_video_close_btn');
+                                            const cardPhoto = document.createElement('img');
+                                            cardPhoto.src = item.photo;
+                                            cardPhoto.className = 'happy_client_photo fade-in';
+
+                                            closeVideo.onclick = () => {
+                                                mainBlock.querySelector('.happy_client_card_video').replaceWith(cardPhoto);
+                                                buttonPlay.classList.remove('hidden');
+                                                closeVideo.remove();
+                                            };
+                                            
+                                            videoBox.onended = () => {
+                                                mainBlock.querySelector('.happy_client_card_video').replaceWith(cardPhoto);
+                                                buttonPlay.classList.remove('hidden');
+                                                closeVideo.remove();
+                                            };
+                                        }
+                                    }/>}
                             </div>
                             <div className="happy_client_info_block">
-                                <div className="happy_client_car_chars_block">
-                                    <h3 className='car_name'>{item.car}</h3>
-                                    <div className='car_char_block'>
-                                        <ul className='car_chars'>
-                                            <li className='char type'>{item.type}</li>
-                                            <li className='char power'>{item.power + ' л.с.'}</li>
-                                            <li className='char engine'>{item.engine + ' л.'}</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <span className='like_a_clients invisible' 
+                                    onClick={(e) => {
+                                    
+                                        setModalStat(true);
+                                        const parentBlock = e.target.closest('.happy_client_card').querySelector('.happy_client_info_block');
+                                        const carChars = parentBlock.querySelectorAll('.char');
+                                        let charsString = '';
+                                        carChars.forEach(char => charsString += `${char.textContent}\n`)
+        
+                                        setChoosenCar({
+                                            car_name: parentBlock.querySelector('.car_name').textContent,
+                                            car_chars: charsString
+                                        });
+                                    }}
+                                >Хочу такую!</span>
+                                <h3 className='car_name'>{item.car}</h3>
+                                <ul className='car_chars'>
+                                    <li className='char type'>{item.type}</li>
+                                    <li>|</li>
+                                    <li className='char power'>{item.power + ' л.с.'}</li>
+                                    <li>|</li>
+                                    <li className='char engine'>{item.engine + ' л.'}</li>
+                                </ul>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            <Popup content={popupContent} setPopupContent={setPopupContent}/>
+            {modalStat === true ? <RecallOrderModal setModalStat={setModalStat} car={choosenCar} setChoosenCar={setChoosenCar} setPopupContent={setPopupContent}/> : null}
         </section>
     )
 }

@@ -6,12 +6,12 @@ export const employers = [
     },
     {
         full_name: 'Николай Алексеевич Михеев',
-        post: 'Менеджер по работе с клиентами',
+        post: 'Руководитель Сочинского филиала',
         ava: '/images/employers/Niko.png'
     },
     {
         full_name: 'Виктор Викторович Голубев',
-        post: 'Менеджер по работе с клиентами',
+        post: 'Руководитель Краснодарского филиала',
         ava: '/images/employers/Victor.png'
     }
 ]

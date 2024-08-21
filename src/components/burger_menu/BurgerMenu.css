@@ -71,12 +71,12 @@
     font-family: 'Gotham';
 }
 
-.list_item {
+.burger_menu_list_item {
     font-size: 20px;
     gap: 15px;
 }
 
-.item_string {
+.burger_menu_item_string {
     justify-content: center;
 }
 

@@ -22,26 +22,26 @@ export function RecallOrderModal({setModalStat, car, setChoosenCar, setPopupCont
     };
 
     useEffect(() => {
-        checkInputs('.mobile_popup_recall_form_btn', '.mobile_modal_input_row, .modal_radio_option')
+        checkInputs('.modal_popup_recall_form_btn', '.modal_modal_input_row, .modal_radio_option')
     });
 
     return (
         createPortal(
-                <div className="mobile_recall_order_window">
-                    <div className="mobile_recall_order_frame">
-                        <button className="mobile_recall_order_window_close" onClick={() => {setModalStat(false); setChoosenCar([])}}>
+                <div className="modal_recall_order_window">
+                    <div className="modal_recall_order_frame">
+                        <button className="modal_recall_order_window_close" onClick={() => {setModalStat(false); setChoosenCar([])}}>
                             <svg viewBox='0 0 24 24' fill='white'>{icons.cross}</svg>
                         </button>
-                        <div className="mobile_recall_form">
-                            <p className='mobile_recall_order_confirm'>
-                                Вы собираетесь заказать доставку <span className='mobile_car_name_confirm'>{car.car_name}</span>.<br/>Просьба указать ваше имя и контактный телефон - мы скоро вам перезвоним!
+                        <div className="modal_recall_form">
+                            <p className='modal_recall_order_confirm'>
+                                Вы собираетесь заказать доставку <span className='modal_car_name_confirm'>{car.car_name}</span>.<br/>Просьба указать ваше имя и контактный телефон - мы скоро вам перезвоним!
                             </p>
-                            <form className='mobile_modal_inputs' id='bot_response_modal' onInput={() => checkInputs('.mobile_popup_recall_form_btn', '.mobile_modal_input_row, .modal_radio_option')}>
-                                <input type="text" className="mobile_modal_input_row" name="name" required placeholder='Ваше имя'/>
-                                <input type="text" className="mobile_modal_input_row" name="phone" required placeholder='Ваш номер телефона'/>
+                            <form className='modal_modal_inputs' id='bot_response_modal' onInput={() => checkInputs('.modal_popup_recall_form_btn', '.modal_modal_input_row, .modal_radio_option')}>
+                                <input type="text" className="modal_modal_input_row" name="name" required placeholder='Ваше имя'/>
+                                <input type="text" className="modal_modal_input_row" name="phone" required placeholder='Ваш номер телефона'/>
                                 <textarea type="text" className="hidden" name="comment" value={`\n${car.car_name}\n\n******\n\n${car.car_chars.trim()}`} readOnly/>
 
-                                <div className='mobile_recall_from'>
+                                <div className='modal_recall_from'>
                                     <p>Укажите, откуда вам перезвонить?</p>
                                     <div className="recall_from_items">
                                         <label className='recall_from_item'>
@@ -53,7 +53,7 @@ export function RecallOrderModal({setModalStat, car, setChoosenCar, setPopupCont
                                     </div>
                                 </div>
 
-                                <button type="submit" className='mobile_popup_recall_form_btn' onClick={tgResponse}>Заказать звонок</button>
+                                <button type="submit" className='modal_popup_recall_form_btn' onClick={tgResponse}>Заказать звонок</button>
                             </form>
                             <p className="privacy_policy">
                                 Отправляя данные, вы соглашаетесь с <br/><a className='privacy_policy_link'>политикой конфиденциальности</a>

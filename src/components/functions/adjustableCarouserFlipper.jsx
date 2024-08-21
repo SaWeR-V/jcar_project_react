@@ -15,7 +15,6 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
 
     isStartOrEnd();
 
-    // if (back) {
         back.onclick = () => {
             if (counter !== 0) {
                 counter--;
@@ -39,8 +38,7 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
                 totalShowedCards = 0;
             }
         }
-    // }
-    // if (next) {
+
 
     
         next.onclick = () => {
@@ -63,10 +61,9 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
             }
             else return;
         }
-    // }
+
 
     function isStartOrEnd() {
-        // if (back && next) {
             if (counter === 0) {
                 back.classList.add('hidden')
             } 
@@ -80,13 +77,5 @@ export function adjustableCarouselFlipper(multiplier, gap, backBtnCSSSelector, n
             else {
                 next.classList.remove('hidden')
             }
-        // }
-    }
-
-    if (window.outerWidth <= 768) {
-        cardCollection.forEach(card => {
-            card.ondragstart = () => console.log("drag_started")
-            // card.style.transform = `translateX(calc((-100%  * ${(counter - 1) * multiplier} - ${remains * 100}%) - ${gap * totalShowedCards}px`
-        })
     }
 }

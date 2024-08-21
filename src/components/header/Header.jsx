@@ -117,7 +117,7 @@ export function Header() {
                                 <li className='list_item'>
                                     <h3>Владивосток</h3>
                                     <div className='item_string'>
-                                        <svg width="24" height="24" fill='white'>{icons.phone_icon}</svg>
+                                        <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79024867563'
                                             onMouseOver={
                                                 (event) => {
@@ -132,7 +132,7 @@ export function Header() {
                                         >+7 902 486-75-63</a>
                                     </div>
                                     <div className='item_string'>
-                                        <svg width="24" height="24" fill='white'>{icons.phone_icon}</svg>
+                                        <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79240023200'
                                             onMouseOver={
                                                 (event) => {
@@ -156,7 +156,7 @@ export function Header() {
                                 <li className='list_item'>
                                     <h3>Сочи</h3>
                                     <div className='item_string'>
-                                        <svg width="24" height="24" fill='white' className='handset'>{icons.phone_icon}</svg>
+                                        <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79873636788' 
                                             onMouseOver={
                                                 (event) => {
@@ -171,8 +171,18 @@ export function Header() {
                                             
                                         >+7 987 363-67-88</a>
                                     </div>
+
+                                    {/* <div className='item_string'>
+                                        <svg width="24" height="24" fill='white' viewBox='0 0 16 16'>{icons.geo}</svg>
+                                        <a target='_blank' href='#'>
+                                            _ВАШЕ МЕСТОПОЛОЖЕНИЕ_
+                                        </a>
+                                    </div> */}
+                                </li>
+                                <li className='list_item'>
+                                    <h3>Краснодар</h3>
                                     <div className='item_string'>
-                                        <svg width="24" height="24" fill='white'>{icons.phone_icon}</svg>
+                                        <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79897519091'
                                             onMouseOver={
                                                 (event) => {
@@ -186,12 +196,6 @@ export function Header() {
                                             }
                                         >+7 989 751-90-91</a>
                                     </div>
-                                    {/* <div className='item_string'>
-                                        <svg width="24" height="24" fill='white' viewBox='0 0 16 16'>{icons.geo}</svg>
-                                        <a target='_blank' href='#'>
-                                            _ВАШЕ МЕСТОПОЛОЖЕНИЕ_
-                                        </a>
-                                    </div> */}
                                 </li>
                             </div>
                         </ul>
@@ -213,13 +217,17 @@ export function Header() {
                     </nav>
                 </div>
                 <ul className="bottom_links">
+                    <li className="bottom_link vk_label">
+                        <svg className="messager_logo vk" fill="#000000" viewBox="0 0 24 24">{icons.vk}</svg>
+                        <a href="https://vk.com/llc_jcar" className='bottom_link_redirector'></a>                        
+                    </li>
                     <li className="bottom_link whatsapp_label">
                         <svg className="messager_logo whatsapp" fill="#000000" viewBox="0 0 32 32">{icons.whatsapp}</svg>
                         <a href="https://chat.whatsapp.com/KxCG8Dzlztb2b7NoOPWIO1" className='bottom_link_redirector'></a>                        
                     </li>
-                    <li className="bottom_link vk_label">
-                        <svg className="messager_logo vk" fill="#000000" viewBox="0 0 24 24">{icons.vk}</svg>
-                        <a href="https://vk.com/jcar_avto" className='bottom_link_redirector'></a>                        
+                    <li className="bottom_link tg_label">
+                        <svg className="messager_logo telegram" fill="#000000" viewBox="0 0 32 32">{icons.tg}</svg>
+                        <a href="https://t.me/llc_jcar" className='bottom_link_redirector'></a>                        
                     </li>
                 </ul>
             </>
