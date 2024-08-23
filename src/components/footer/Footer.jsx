@@ -1,7 +1,12 @@
 import { icons } from '../icons'
 import './Footer.css'
+import { useState } from 'react';
+import { currentTimeCheck } from '../functions/currentTimeCheck';
+import { Popup } from '../popup/Popup';
 
 export function Footer() {
+    const [popupContent, setPopupContent] = useState(null);
+
     return (
         <footer className='footer_wrapper'>
             <div className="footer_content">
@@ -11,22 +16,62 @@ export function Footer() {
                         <li className='footer_phone_numbers_list_item'>
                             <h3>Владивосток</h3>
                             <div className='footer_phone_numbers_item_string'>
-                                <a className="footer_phone_number_link" href='tel:+79024867563'>+7 902 486-75-63</a>
+                                <a className="footer_phone_number_link" href='tel:+79024867563'
+                                    onClick={(e) => {
+                                        const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                        const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+
+                                        if (currentHour >= 22 || currentHour < 8) {
+                                            e.preventDefault();
+                                            setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                        }
+                                    }}
+                                >+7 902 486-75-63</a>
                             </div>
                             <div className='footer_phone_numbers_item_string'>
-                                <a className="footer_phone_number_link" href='tel:+79240023200'>+7 924 002-32-00</a>
+                                <a className="footer_phone_number_link" href='tel:+79240023200'
+                                    onClick={(e) => {
+                                        const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                        const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+    
+                                        if (currentHour >= 22 || currentHour < 8) {
+                                            e.preventDefault();
+                                            setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                        }
+                                    }}
+                                >+7 924 002-32-00</a>
                             </div>
                         </li>
                         <li className='footer_phone_numbers_list_item'>
                             <h3>Сочи</h3>
                             <div className='footer_phone_numbers_item_string'>
-                                <a className="footer_phone_number_link" href='tel:+79873636788'>+7 987 363-67-88</a>
+                                <a className="footer_phone_number_link" href='tel:+79873636788'
+                                    onClick={(e) => {
+                                        const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                        const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                        if (currentHour >= 22 || currentHour < 8) {
+                                            e.preventDefault();
+                                            setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                        }
+                                    }}
+                                >+7 987 363-67-88</a>
                             </div>
                         </li>
                         <li className='footer_phone_numbers_list_item'>
                             <h3>Краснодар</h3>
                             <div className='footer_phone_numbers_item_string'>
-                                <a className="footer_phone_number_link" href='tel:+79897519091'>+7 989 751-90-91</a>
+                                <a className="footer_phone_number_link" href='tel:+79897519091'
+                                    onClick={(e) => {
+                                        const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                        const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                        if (currentHour >= 22 || currentHour < 8) {
+                                            e.preventDefault();
+                                            setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                        }
+                                    }}
+                                >+7 989 751-90-91</a>
                             </div>
                         </li>
                     </ul>
@@ -59,6 +104,7 @@ export function Footer() {
                     <p>Все права защищены.</p>
                 </div>
             </div>
+            <Popup content={popupContent} setPopupContent={setPopupContent}/>
         </footer>
     )
 }

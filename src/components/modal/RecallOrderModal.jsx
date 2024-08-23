@@ -50,6 +50,9 @@ export function RecallOrderModal({setModalStat, car, setChoosenCar, setPopupCont
                                         <label className='recall_from_item'>
                                             <input className="modal_radio_option" type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
                                         </label>
+                                        <label className='recall_from_item'>
+                                            <input className="radio_option" type="radio" name="radio_option" id="radioKrasnodar" value='Краснодар' required/>Краснодар
+                                        </label>
                                     </div>
                                 </div>
 

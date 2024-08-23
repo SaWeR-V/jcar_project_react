@@ -2,10 +2,14 @@ import './BurgerMenu.css'
 import { useEffect, useState } from "react";
 import { icons } from "../icons";
 import { Link } from "react-router-dom";
+import { currentTimeCheck } from '../functions/currentTimeCheck';
+import { Popup } from '../popup/Popup';
 
 
 export function BurgerMenu({burgerStatus, setBurgerStatus}) {
     const [currentFilter, setFilter] = useState(null);
+    const [popupContent, setPopupContent] = useState(null);
+
 
     useEffect(() => {
         const burgerBtn = document.querySelector('.burger_menu_btn')
@@ -50,22 +54,66 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                     <li className='burger_menu_list_item'>
                         <h3>Владивосток</h3>
                         <div className='burger_menu_item_string'>
-                            <a className="phone_number_link" href='tel:+79024867563'>+7 902 486-75-63</a>
+                            <a className="phone_number_link" href='tel:+79024867563'
+                                onClick={(e) => {
+                                    const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                    const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+
+                                    if (currentHour >= 22 || currentHour < 8) {
+                                        e.preventDefault();
+                                        setBurgerStatus(false);
+                                        setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                    }
+                                }}
+                            >+7 902 486-75-63</a>
                         </div>
                         <div className='burger_menu_item_string'>
-                            <a className="phone_number_link" href='tel:+79240023200'>+7 924 002-32-00</a>
+                            <a className="phone_number_link" href='tel:+79240023200'
+                                onClick={(e) => {
+                                    const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                    const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+
+                                    if (currentHour >= 22 || currentHour < 8) {
+                                        e.preventDefault();
+                                        setBurgerStatus(false);
+                                        setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                    }
+                                }}
+                            >+7 924 002-32-00</a>
                         </div>
                     </li>
                     <li className='burger_menu_list_item'>
                         <h3>Сочи</h3>
                         <div className='burger_menu_item_string'>
-                            <a className="phone_number_link" href='tel:+79873636788'>+7 987 363-67-88</a>
+                            <a className="phone_number_link" href='tel:+79873636788'
+                                onClick={(e) => {
+                                    const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                    const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                    if (currentHour >= 22 || currentHour < 8) {
+                                        e.preventDefault();
+                                        setBurgerStatus(false);
+                                        setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                    }
+                                }}
+                            >+7 987 363-67-88</a>
                         </div>
                     </li>
                     <li className='burger_menu_list_item'>
                         <h3>Краснодар</h3>
                         <div className='burger_menu_item_string'>
-                            <a className="phone_number_link" href='tel:+79897519091'>+7 989 751-90-91</a>
+                            <a className="phone_number_link" href='tel:+79897519091'
+                                onClick={(e) => {
+                                    const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                    const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                    if (currentHour >= 22 || currentHour < 8) {
+                                        e.preventDefault();
+                                        setBurgerStatus(false);
+                                        setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                    }
+                                }}
+                            >+7 989 751-90-91</a>
                         </div>
                     </li>
                 </ul>
@@ -138,7 +186,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                         </li>
                     </ul>
             </div>
-
+            <Popup content={popupContent} setPopupContent={setPopupContent}/>
         </div>
     )
 }

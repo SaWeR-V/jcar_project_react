@@ -3,6 +3,8 @@ import { icons } from '../icons'
 import { useState, useEffect } from 'react'
 import { ModalFrame } from './modal/ModalFrame';
 import { BurgerMenu } from '../burger_menu/BurgerMenu';
+import { currentTimeCheck } from '../functions/currentTimeCheck';
+import { Popup } from '../popup/Popup';
 
 export function Header() {
     const [servicesModal, setServicesModal] = useState(false);
@@ -10,6 +12,7 @@ export function Header() {
     const [documentPosition, setDocumentPosition] = useState(0);
     const [modalParent, setModalParent] = useState(null);
     const [burgerStatus, setBurgerStatus] = useState(false);
+    const [popupContent, setPopupContent] = useState(null);
 
     function modalToggle(option, event) {
 
@@ -129,6 +132,16 @@ export function Header() {
                                                     event.target.closest('div').querySelector('svg').classList.remove('fill_red')
                                                 }
                                             }
+
+                                            onClick={(e) => {
+                                                const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                                const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+
+                                                if (currentHour >= 22 || currentHour < 8) {
+                                                    e.preventDefault();
+                                                    setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                                }
+                                            }}
                                         >+7 902 486-75-63</a>
                                     </div>
                                     <div className='item_string'>
@@ -144,6 +157,16 @@ export function Header() {
                                                     event.target.closest('div').querySelector('svg').classList.remove('fill_red')
                                                 }
                                             }
+
+                                            onClick={(e) => {
+                                                const currentTime = currentTimeCheck('Vladivostok').vladivostokTime;
+                                                const currentHour = currentTimeCheck('Vladivostok').vladivostokHours;
+
+                                                if (currentHour >= 22 || currentHour < 8) {
+                                                    e.preventDefault();
+                                                    setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. Во Владивостоке сейчас ${currentTime}`})
+                                                }
+                                            }}
                                         >+7 924 002-32-00</a>
                                     </div>
                                     {/* <div className='item_string'>
@@ -168,7 +191,16 @@ export function Header() {
                                                     event.target.closest('div').querySelector('svg').classList.remove('fill_red')
                                                 }
                                             }
-                                            
+
+                                            onClick={(e) => {
+                                                const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                                const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                                if (currentHour >= 22 || currentHour < 8) {
+                                                    e.preventDefault();
+                                                    setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                                }
+                                            }}
                                         >+7 987 363-67-88</a>
                                     </div>
 
@@ -194,6 +226,16 @@ export function Header() {
                                                     event.target.closest('div').querySelector('svg').classList.remove('fill_red')
                                                 }
                                             }
+
+                                            onClick={(e) => {
+                                                const currentTime = currentTimeCheck('Sochi').sochiTime;
+                                                const currentHour = currentTimeCheck('Sochi').sochiHours;
+
+                                                if (currentHour >= 22 || currentHour < 8) {
+                                                    e.preventDefault();
+                                                    setPopupContent({error: `Вызовы принимаются с 08:00 до 22:00. В Сочи сейчас ${currentTime}`})
+                                                }
+                                            }}
                                         >+7 989 751-90-91</a>
                                     </div>
                                 </li>
@@ -230,6 +272,7 @@ export function Header() {
                         <a href="https://t.me/llc_jcar" className='bottom_link_redirector'></a>                        
                     </li>
                 </ul>
+                <Popup content={popupContent} setPopupContent={setPopupContent}/>
             </>
         )
     }

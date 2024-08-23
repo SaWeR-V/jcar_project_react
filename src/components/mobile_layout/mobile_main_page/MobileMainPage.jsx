@@ -79,6 +79,9 @@ export function MobileMainPage() {
                                 <label className='recall_from_item'>
                                     <input className="radio_option" type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
                                 </label>
+                                <label className='recall_from_item'>
+                                    <input className="radio_option" type="radio" name="radio_option" id="radioSochi" value='Краснодар' required/>Краснодар
+                                </label>
                             </div>
                         </div>
                         <button type="submit" className='recall_form_btn' onClick={tgResponse}>Запросить консультацию</button>

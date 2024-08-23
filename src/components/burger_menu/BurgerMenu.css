@@ -72,8 +72,10 @@
 }
 
 .burger_menu_list_item {
+    display: flex;
     font-size: 20px;
     gap: 15px;
+    flex-direction: column;
 }
 
 .burger_menu_item_string {
@@ -157,5 +159,9 @@
 @media (max-width: 425px) {
     .burger_menu {
         width: 100%;
+    }
+
+    .burger_menu_block {
+        padding: 145px 20px 0 95px;
     }
 }

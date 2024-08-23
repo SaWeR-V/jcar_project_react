@@ -11,7 +11,7 @@ export async function sendMessage(formId) {
         comment: form.comment.value
     };
 
-    return axios.post('http://192.168.0.101:5000/api/sendMessage', data)
+    return axios.post('/api/sendMessage', data)
     .then(response => {
         return response.status;
     })

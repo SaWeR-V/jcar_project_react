@@ -113,4 +113,8 @@
     .modal_popup_recall_form_btn {
         width: 100%;
     }
+
+    .empty_confirm, .empty_from {
+        font-size: 15px;
+    }
 }

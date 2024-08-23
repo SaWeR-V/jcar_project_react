@@ -349,8 +349,3 @@ body::-webkit-scrollbar-thumb {
     max-width: 0;
   }
 }
-
-
-@media (max-width: 425px) {
-  
-}

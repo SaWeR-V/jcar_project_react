@@ -63,7 +63,7 @@
 
 .mobile_recall_form_wrapper {
     width: 90%;
-    padding: 35px;
+    padding: 32px;
     display: flex;
     gap: 20px;
     background-color: var(--white-color);

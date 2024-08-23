@@ -33,7 +33,7 @@ export function RecallOrderEmptyModal({setModalEmptyStat}) {
                             <svg viewBox='0 0 24 24' fill='white'>{icons.cross}</svg>
                         </button>
                         <div className="modal_recall_form">
-                            <p className='modal_recall_order_confirm'>
+                            <p className='modal_recall_order_confirm empty_confirm'>
                                 Отправьте нам заявку на интересующий вас автомобиль и мы с вами свяжемся в ближайшее время!
                             </p>
                             <form className='modal_modal_inputs' id='bot_response_modal' onInput={() => checkInputs('.modal_popup_recall_form_btn', '.modal_modal_input_row, .modal_radio_option')}>
@@ -41,7 +41,7 @@ export function RecallOrderEmptyModal({setModalEmptyStat}) {
                                 <input type="text" className="modal_modal_input_row" name="phone" required placeholder='Ваш номер телефона'/>
                                 <textarea type="text" className="input_row last_row" name="comment" required placeholder='Желаемая марка, модель, год, объём двигателя и прочие комментарии'/>
 
-                                <div className='modal_recall_from'>
+                                <div className='modal_recall_from empty_from'>
                                     <p>Укажите, откуда вам перезвонить?</p>
                                     <div className="recall_from_items">
                                         <label className='recall_from_item'>
@@ -49,6 +49,9 @@ export function RecallOrderEmptyModal({setModalEmptyStat}) {
                                         </label>
                                         <label className='recall_from_item'>
                                             <input className="modal_radio_option" type="radio" name="radio_option" id="radioSochi" value='Сочи' required/>Сочи
+                                        </label>
+                                        <label className='recall_from_item'>
+                                            <input className="radio_option" type="radio" name="radio_option" id="radioKrasnodar" value='Краснодар' required/>Краснодар
                                         </label>
                                     </div>
                                 </div>

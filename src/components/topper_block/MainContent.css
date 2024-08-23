@@ -6,7 +6,7 @@
     background-color: rgba(95, 95, 95, 0.25);
     padding: 20px;
     border-radius: 20px;
-    max-height: 720px;
+    max-height: 745px;
     gap: 10px;
 }
 
@@ -348,7 +348,7 @@
     .recall_form_btn {
         padding: 15px;
         width: 95%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .privacy_policy {
