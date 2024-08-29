@@ -216,6 +216,10 @@
         font-size: 16px;
     }
 
+    .list_item_header {
+        font-size: 16px;
+    }
+
     .item_string {
         gap: 8px;
         min-height: 25px;
@@ -225,5 +229,9 @@
     .header_links {
         font-size: 16px;
         gap: 20px;
+    }
+
+    .bottom_links {
+        right: 25%;
     }
 }

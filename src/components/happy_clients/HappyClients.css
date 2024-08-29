@@ -184,7 +184,7 @@
 
 .car_chars {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
     font-family: 'Roboto';
     font-size: 15px;

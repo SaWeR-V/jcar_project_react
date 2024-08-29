@@ -106,11 +106,13 @@ export function HappyClients() {
                                 >Хочу такую!</span>
                                 <h3 className='car_name'>{item.car}</h3>
                                 <ul className='car_chars'>
-                                    <li className='char type'>{item.type}</li>
+                                    <li className='char'>{item.type}</li>
                                     <li>|</li>
-                                    <li className='char power'>{item.power + ' л.с.'}</li>
+                                    <li className='char'>{item.power + ' л.с.'}</li>
                                     <li>|</li>
-                                    <li className='char engine'>{item.engine + ' л.'}</li>
+                                    <li className='char'>{item.engine + ' л.'}</li>
+                                    <li>|</li>
+                                    <li className='char'>{item.transmission}</li>
                                 </ul>
                             </div>
                         </div>

@@ -118,7 +118,7 @@ export function Header() {
                             </li>
                             <div className="contacts_block">
                                 <li className='list_item'>
-                                    <h3>Владивосток</h3>
+                                    <h3 className='list_item_header'>Владивосток</h3>
                                     <div className='item_string'>
                                         <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79024867563'
@@ -177,7 +177,7 @@ export function Header() {
                                     </div> */}
                                 </li>
                                 <li className='list_item'>
-                                    <h3>Сочи</h3>
+                                    <h3 className='list_item_header'>Сочи</h3>
                                     <div className='item_string'>
                                         <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79873636788' 
@@ -212,7 +212,7 @@ export function Header() {
                                     </div> */}
                                 </li>
                                 <li className='list_item'>
-                                    <h3>Краснодар</h3>
+                                    <h3 className='list_item_header'>Краснодар</h3>
                                     <div className='item_string'>
                                         <svg width="20" height="20" fill='white' viewBox='0 0 24 24'>{icons.phone_icon}</svg>
                                         <a className="phone_number_link" href='tel:+79897519091'

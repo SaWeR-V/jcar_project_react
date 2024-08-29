@@ -4,14 +4,15 @@ import { createPortal } from 'react-dom'
 import { icons } from './components/icons'
 import { WelcomeVideo } from './components/modal/WelcomeVideo'
 import { MainPage } from './components/routes/MainPage'
-import { AutosPage } from './components/routes/AutosPage'
+import { VehiclesPage } from './components/routes/VehiclesPage'
 import { Header } from './components/header/Header'
 
 import './App.css'
 import { MobileMainPage } from './components/mobile_layout/mobile_main_page/MobileMainPage'
 import { Footer } from './components/footer/Footer'
 import { MobileVehiclesPage } from './components/mobile_layout/mobile_vehicles_page/MobileVehiclesPage'
-import { auto } from './components/autos/auto'
+import { autos } from './components/vehicles/autos'
+import { motorcycles } from './components/vehicles/motorcycles'
 
 function App() {
   const [helloBaner, setHelloBaner] = useState(true);
@@ -35,7 +36,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path='/' element={<MobileMainPage/>} />
-          <Route path='/autos' element={<MobileVehiclesPage data={auto}/>} />
+          <Route path='/autos' element={<MobileVehiclesPage data={autos}/>} />
           <Route path='/motorcycles' element={<MobileVehiclesPage />} />
           <Route path='/special_vehicles' element={<MobileVehiclesPage />} />
           <Route path='/constructors' element={<MobileVehiclesPage />} />
@@ -50,7 +51,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='/autos' element={<AutosPage />} />
+        <Route path='/autos' element={<VehiclesPage props={autos}/>} />
+        <Route path='/motorcycles' element={<VehiclesPage props={motorcycles}/>} />
       </Routes>
       <Footer/>
     </>

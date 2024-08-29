@@ -10,12 +10,6 @@
     gap: 10px;
 }
 
-.autos {
-    width: 65%;
-    margin-bottom: 0;
-    padding: 0;
-}
-
 .conditions {
     display: flex;
     flex-direction: column;
@@ -355,9 +349,3 @@
         font-size: 13px;
     }
 }
-
-/* @media (max-width: 390px) {
-    .main_content_wrapper {
-        width: 85%;
-    }
-} */

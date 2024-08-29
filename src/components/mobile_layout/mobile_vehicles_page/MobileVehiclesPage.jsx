@@ -65,9 +65,9 @@ export function MobileVehiclesPage({data}) {
                             <ul className="mobile_vehicle_chars">
                                 <li className="mobile_vehicle_char">{vehicle.type}</li>
                                 <li>|</li>
-                                <li className="mobile_vehicle_char">{vehicle.power} л.с.</li>
+                                <li className="mobile_vehicle_char">{vehicle.power}</li>
                                 <li>|</li>
-                                <li className="mobile_vehicle_char">{vehicle.engine} л.</li>
+                                <li className="mobile_vehicle_char">{vehicle.engine}</li>
                                 <li>|</li>
                                 <li className="mobile_vehicle_char">{vehicle.transmission}</li>
                             </ul>

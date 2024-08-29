@@ -39,15 +39,26 @@ export const happyClients = [
     },
     {
         id: 5,
+        car: "Kubota MZ65",
+        type: "Мини-трактор",
+        power: 64.1,
+        engine: 3.3,
+        transmission: '-',
+        photo: "/images/clients/Kubota_MZ65.jpg",
+        video: "/videos/clients/kubota_mz65_id5.mp4"
+    },
+    {
+        id: 6,
         car: "Toyota Allion",
         type: "Седан",
         power: 109,
         engine: 1.5,
         transmission: 'CVT',
-        photo: "/images/clients/Toyota_Allion.jpg"
+        photo: "/images/clients/Toyota_Allion.jpg",
+        video: "/videos/clients/allion_id6.mp4"
     },
     {
-        id: 6,
+        id: 7,
         car: "Toyota Pixis Joy",
         type: "Кей-кар",
         power: 64,
@@ -56,7 +67,7 @@ export const happyClients = [
         photo: "/images/clients/Toyota_Pixis_Joy2.jpg"
     },
     {
-        id: 7,
+        id: 8,
         car: "Toyota Ractis",
         type: "Хэтчбек",
         power: 99,
@@ -65,7 +76,7 @@ export const happyClients = [
         photo: "/images/clients/Toyota_Ractis.jpg"
     },
     {
-        id: 8,
+        id: 9,
         car: "Toyota Sienta",
         type: "Минивэн",
         power: 109,
@@ -74,12 +85,22 @@ export const happyClients = [
         photo: "/images/clients/Toyota_Sienta.jpg"
     },
     {
-        id: 9,
+        id: 10,
         car: "Volkswagen Tiguan",
         type: "Кроссовер",
         power: 150,
         engine: 2.0,
         transmission: 'AT',
         photo: "/images/clients/Volkswagen_Tiguan.jpg"
+    },
+    {
+        id: 11,
+        car: "Toyota Yaris",
+        type: "Хэтчбек",
+        power: 72,
+        engine: 1.0,
+        transmission: 'AT',
+        photo: "/images/clients/Toyota_Yaris.jpg",
+        video: "/videos/clients/yaris_id11.mp4"
     }
 ]
