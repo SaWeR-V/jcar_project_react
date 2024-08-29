@@ -13,6 +13,8 @@ import { Footer } from './components/footer/Footer'
 import { MobileVehiclesPage } from './components/mobile_layout/mobile_vehicles_page/MobileVehiclesPage'
 import { autos } from './components/vehicles/autos'
 import { motorcycles } from './components/vehicles/motorcycles'
+import { specials } from './components/vehicles/specials'
+import { constructors } from './components/vehicles/constructors'
 
 function App() {
   const [helloBaner, setHelloBaner] = useState(true);
@@ -37,9 +39,9 @@ function App() {
         <Routes>
           <Route path='/' element={<MobileMainPage/>} />
           <Route path='/autos' element={<MobileVehiclesPage data={autos}/>} />
-          <Route path='/motorcycles' element={<MobileVehiclesPage />} />
-          <Route path='/special_vehicles' element={<MobileVehiclesPage />} />
-          <Route path='/constructors' element={<MobileVehiclesPage />} />
+          <Route path='/motorcycles' element={<MobileVehiclesPage data={motorcycles}/>} />
+          <Route path='/special_vehicles' element={<MobileVehiclesPage data={specials}/>} />
+          <Route path='/constructors' element={<MobileVehiclesPage data={constructors}/>} />
         </Routes>
         <Footer/>
       </>
@@ -53,6 +55,8 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/autos' element={<VehiclesPage props={autos}/>} />
         <Route path='/motorcycles' element={<VehiclesPage props={motorcycles}/>} />
+        <Route path='/special_vehicles' element={<VehiclesPage props={specials}/>} />
+        <Route path='/constructors' element={<VehiclesPage props={constructors}/>} />
       </Routes>
       <Footer/>
     </>

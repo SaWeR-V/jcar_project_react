@@ -49,8 +49,18 @@ export function MobileVehiclesPage({data}) {
 
     useEffect(() => {
         const top = document.querySelector('.mobile_cards_grid');
-        top.scrollIntoView()
+        if (top) {
+            top.scrollIntoView()
+        }
     },[])
+
+    if (data.length === 0) {
+        return (
+            <div className="message_there_is_no_content">
+                <h3 className='no_content_txt'>Здесь пока ничего нет...</h3>
+            </div>
+        )
+    }
 
     return (
         <main className='mobile_cards_grid'>

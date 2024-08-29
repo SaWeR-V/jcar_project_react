@@ -44,9 +44,12 @@ export function Vehicles({data}) {
         return () => window.removeEventListener('scroll', debouncedHandleScroll);
     },[debouncedHandleScroll]);
 
-    function formatter(value) {
-        const newValue = new Intl.NumberFormat("ru", {maximumSignificantDigits: 3}).format(value);
-        return newValue;
+    if (data.length === 0) {
+        return (
+            <div className="message_there_is_no_content">
+                <h3 className='no_content_txt'>Здесь пока ничего нет...</h3>
+            </div>
+        )
     }
 
     return (
