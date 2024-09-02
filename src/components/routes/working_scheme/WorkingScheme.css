@@ -1,0 +1,168 @@
+.working_scheme_wrapper::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/handshaking.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.working_scheme_wrapper {
+    min-height: 100vh;;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 8rem;
+    position: relative;
+}
+
+.working_scheme_block {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.working_scheme_title {
+    font-family: 'Gotham';
+    font-size: 48px;
+    color: var(--white-color);
+}
+
+.working_stages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-evenly;
+}
+
+.working_stage_block {
+    display: flex;
+    gap: 15px;
+    width: 30%;
+    background-color: rgb(225,225,225);
+    padding: 5%;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 1px solid rgb(175 175 175);
+}
+
+.working_stage_block_header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-family: 'Gotham';
+    font-size: 16px;
+}
+
+.working_stage_step {
+    background-color: #e50000;
+    color: var(--white-color);
+    display: flex;
+    min-width: 24px;
+    height: 30px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.working_stage_block_text {
+    font-family: 'Roboto';
+    text-align: center;
+    line-height: 24px;
+    color: rgb(75,75,75)
+}
+
+.make_consult_order {
+    align-self: center;
+    width: 70%;
+    padding: 12px;
+    border: none;
+    border-radius: 16px;
+    background-color: #e50000;
+    color: var(--white-color);
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 1366px) {
+    .working_scheme_block {
+        gap: 20px;
+    }
+
+    .working_scheme_title {
+        font-size: 36px;
+    }
+
+    .working_stages {
+        gap: 15px;
+    }
+
+    .working_stage_block {
+        width: calc(33% - 10px);
+        padding: 5% 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .working_scheme_wrapper { 
+        padding-top: 9rem;
+        padding-bottom: 3rem;
+    }
+
+    .working_scheme_block {
+        width: 90%;
+    }
+
+    .working_scheme_title {
+        text-align: center;
+    }
+
+    .working_stage_block {
+        width: calc(50% - 10px);
+        padding: 5% 3%;
+    }
+}
+
+@media (max-width: 425px) {
+    .working_scheme_wrapper::before {
+        content: none;
+    }
+
+    .working_scheme_block {
+        gap: 32px;
+        padding: 10px;
+        background-color: transparent;
+    }
+
+    .working_scheme_title {
+        font-size: 32px;
+    }
+
+    .working_stage_block {
+        width: 100%;
+        padding: 5% 3%;
+    }
+
+    .working_stage_block_header {
+        font-size: 20px;
+    }
+
+    .working_stage_block_text {
+        line-height: 20px;
+        font-size: 15px;
+        padding: 5%;
+    }
+}

@@ -15,6 +15,7 @@ import { autos } from './components/vehicles/autos'
 import { motorcycles } from './components/vehicles/motorcycles'
 import { specials } from './components/vehicles/specials'
 import { constructors } from './components/vehicles/constructors'
+import { WorkingScheme } from './components/routes/working_scheme/WorkingScheme'
 
 function App() {
   const [helloBaner, setHelloBaner] = useState(true);
@@ -42,6 +43,7 @@ function App() {
           <Route path='/motorcycles' element={<MobileVehiclesPage data={motorcycles}/>} />
           <Route path='/special_vehicles' element={<MobileVehiclesPage data={specials}/>} />
           <Route path='/constructors' element={<MobileVehiclesPage data={constructors}/>} />
+          <Route path='/working_scheme' element={<WorkingScheme />} />
         </Routes>
         <Footer/>
       </>
@@ -57,6 +59,7 @@ function App() {
         <Route path='/motorcycles' element={<VehiclesPage props={motorcycles}/>} />
         <Route path='/special_vehicles' element={<VehiclesPage props={specials}/>} />
         <Route path='/constructors' element={<VehiclesPage props={constructors}/>} />
+        <Route path='/working_scheme' element={<WorkingScheme />} />
       </Routes>
       <Footer/>
     </>

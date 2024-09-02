@@ -136,9 +136,9 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 </ul>
 
                 <ul className='burger_menu_links'>
-                    {/* <li className='burger_menu_link_item'>
+                    <li className='burger_menu_link_item'>
                         <a className='context_menu_link noselect'>Услуги</a>
-                    </li> */}
+                    </li>
                     <li className='burger_menu_link_item'>
                         <a className='context_menu_link noselect'>Информация</a>
                     </li>
@@ -148,7 +148,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 </ul>
             </div>
 
-            {/* <div className={currentFilter === "Услуги" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
+            <div className={currentFilter === "Услуги" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
                 <button className="burger_menu_goback" onClick={restoreBurgerMenu}>
                     <svg viewBox="0 0 24 24" width={30} height={30}>{icons.go_back}</svg>
                 </button>
@@ -167,7 +167,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                             <Link to={'/constructors'} className='burger_link' onClick={() => setBurgerStatus(false)}>Конструкторы</Link>
                         </li>
                     </ul>
-            </div> */}
+            </div>
 
             <div className={currentFilter === "Информация" ? "burger_menu_block fade-in" : "burger_menu_block fade-in hidden"}>
                 <button className="burger_menu_goback" onClick={restoreBurgerMenu}>
@@ -176,7 +176,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 <h3 className="burger_menu_selected_option">Информация</h3>
                     <ul className='burger_items'>
                         <li className='burger_item'>
-                            <Link to={'/work_scheme'} className='burger_link' onClick={() => setBurgerStatus(false)}>Схема работы</Link>
+                            <Link to={'/working_scheme'} className='burger_link' onClick={() => setBurgerStatus(false)}>Схема работы</Link>
                         </li>
                         <li className='burger_item'>
                             <Link to={'/contract_example'} className='burger_link' onClick={() => setBurgerStatus(false)}>Пример договора</Link>

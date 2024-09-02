@@ -118,11 +118,13 @@
 .employer_name {
     font-size: 28px;
     text-align: center;
+    width: 80%;
 }
 
 .employer_post {
     text-align: center;
     font-size: 18px;
+    width: 80%;
 }
 
 .card_position_btns_container {

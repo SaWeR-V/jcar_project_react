@@ -140,7 +140,7 @@ export const autos = [
         power: '130 л.с.',
         engine: '1.8 л.',
         transmission: 'CVT',
-        price: '1 727 292',
+        price: '1 200 000',
         image: "/images/cars/toyota_isis.jpg"
     }
 ]

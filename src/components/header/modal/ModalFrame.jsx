@@ -34,13 +34,13 @@ export function ModalFrame({ parent, servicesModal, infoModal }) {
                 <nav className={infoModal === false ? 'modal_frame' : 'modal_frame smooth_flow'}>
                     <ul className='services_frame_items'>
                         <li className='services_item'>
-                            <a href='/' className='services_link'>Схема работы</a>
+                            <Link to={'/working_scheme'} href='/' className='services_link'>Схема работы</Link>
                         </li>
                         <li className='services_item'>
-                            <a href='/' className='services_link'>Пример договора</a>
+                            <Link href='/' className='services_link'>Пример договора</Link>
                         </li>
                         <li className='services_item'>
-                            <a href='/' className='services_link'>Вопрос-ответ</a>
+                            <Link href='/' className='services_link'>Вопрос-ответ</Link>
                         </li>
                     </ul>
                 </nav>

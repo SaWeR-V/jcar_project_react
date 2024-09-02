@@ -16,7 +16,8 @@ export const happyClients = [
         power: 56,      // мощность л.с.
         engine: 0.7,        //объем движка, л.  
         transmission: 'MT',   // коробка
-        photo: "/images/clients/Daihatsu_Taft.jpg"
+        photo: "/images/clients/Daihatsu_Taft.jpg",
+        video: "/videos/clients/daihatsu_taft_id2.mp4"
     },
     {
         id: 3,
@@ -35,7 +36,8 @@ export const happyClients = [
         power: 117,
         engine: 1.6,
         transmission: 'MT',
-        photo: "/images/clients/Suzuki_SX4.jpg"
+        photo: "/images/clients/Suzuki_SX4.jpg",
+        video: "/videos/clients/suzuki_sx4_id4.mp4"
     },
     {
         id: 5,
@@ -64,7 +66,8 @@ export const happyClients = [
         power: 64,
         engine: 0.7,
         transmission: 'CVT',
-        photo: "/images/clients/Toyota_Pixis_Joy2.jpg"
+        photo: "/images/clients/Toyota_Pixis_Joy2.jpg",
+        video: "/videos/clients/toyota_pixis_joy2_id7.mp4"
     },
     {
         id: 8,
@@ -73,7 +76,8 @@ export const happyClients = [
         power: 99,
         engine: 1.3,
         transmission: 'MT',
-        photo: "/images/clients/Toyota_Ractis.jpg"
+        photo: "/images/clients/Toyota_Ractis.jpg",
+        video: "/videos/clients/toyota_ractis_id8.mp4"
     },
     {
         id: 9,
