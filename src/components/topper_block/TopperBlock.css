@@ -28,6 +28,12 @@
 
 @media (max-width: 1366px) {
     .topper_block {
-        padding-top: 9rem;
+        padding-top: 7.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .topper_block {
+        padding-top: 6rem;
     }
 }

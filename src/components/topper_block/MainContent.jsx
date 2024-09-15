@@ -78,6 +78,10 @@ export function MainContent() {
                                 <label className='recall_from_item'>
                                     <input className="radio_option" type="radio" name="radio_option" id="radioKrasnodar" value='Краснодар' required/>Краснодар
                                 </label>
+                                <label className='recall_from_item'>
+                                    <input className="radio_option" type="radio" name="radio_option" id="radioOther" required/>Другой город
+                                    <input type="text" className="input_row" name="other_city" required placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
+                                </label>
                             </div>
                         </div>
 

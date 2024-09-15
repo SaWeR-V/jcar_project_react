@@ -248,6 +248,10 @@ body::-webkit-scrollbar-thumb {
   user-select: none;
 }
 
+.fixation {
+  position: fixed;
+}
+
 @keyframes Fade-In {
   0% {
     opacity: 0;

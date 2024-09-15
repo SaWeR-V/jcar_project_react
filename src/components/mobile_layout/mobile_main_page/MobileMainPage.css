@@ -71,6 +71,16 @@
     border-radius: 32px;
 }
 
+.other_city_label {
+    position: relative;
+    align-items: center;
+    top: -8px;
+}
+
+.other_city {
+    width: 50%;
+}
+
 .mobile_vehicles_categories {
     min-height: 100vh;
     display: flex;

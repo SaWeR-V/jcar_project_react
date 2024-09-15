@@ -53,6 +53,12 @@ export function RecallOrderModal({setModalStat, car, setChoosenCar, setPopupCont
                                         <label className='recall_from_item'>
                                             <input className="radio_option" type="radio" name="radio_option" id="radioKrasnodar" value='Краснодар' required/>Краснодар
                                         </label>
+                                        <label className='recall_from_item other_city_label'>
+                                            <input className="radio_option" type="radio" name="radio_option" id="radioOther" required/>Другой город
+                                            <div className="other_city">
+                                                <input type="text" className="input_row your_city" name="other_city" required placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
+                                            </div> 
+                                        </label>
                                     </div>
                                 </div>
 

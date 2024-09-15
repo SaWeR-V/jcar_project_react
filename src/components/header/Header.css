@@ -67,7 +67,7 @@
     gap: 10px;
     min-height: 30px;
     align-items: center;
-    min-width: 160px;
+    min-width: 165px;
     justify-content: flex-start;
     font-family: 'Helvetica';
     font-size: 18px;
@@ -200,7 +200,7 @@
     }
 
     .header_container {
-        width: 80%;
+        width: 85%;
     }
 
     .logo {
@@ -233,5 +233,27 @@
 
     .bottom_links {
         right: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header_wrapper {
+        margin-top: 15px;
+    }
+
+    .black_bg {
+        margin-top: 0px;
+    }
+
+    .header_container {
+        width: 75%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .header_container {
+        width: 85%;
+        height: 75px;
     }
 }

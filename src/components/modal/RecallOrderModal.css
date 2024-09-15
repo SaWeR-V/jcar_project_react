@@ -99,6 +99,12 @@
     }
 }
 
+@media (max-width: 1366px) {
+    .modal_recall_order_frame {
+        width: 65%;
+    }
+}
+
 @media (max-width: 768px) {
     .modal_recall_order_frame {
         width: 60%;
@@ -106,6 +112,10 @@
 }
 
 @media (max-width: 425px) {
+    .modal_recall_form {
+        width: 100%;
+    }
+
     .modal_recall_order_frame {
         width: 90%;
     }

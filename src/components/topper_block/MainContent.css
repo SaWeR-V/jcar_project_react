@@ -6,7 +6,6 @@
     background-color: rgba(95, 95, 95, 0.25);
     padding: 20px;
     border-radius: 20px;
-    max-height: 745px;
     gap: 10px;
 }
 
@@ -141,7 +140,7 @@
 }
 
 .last_row {
-    height: 90px;
+    height: 65px;
     resize: none;
     padding: 10px 15px;
 }
@@ -217,7 +216,7 @@
 
 @media (max-width: 1366px) {
     .main_content_wrapper {
-        max-height: 620px;
+        max-height: none;
         width: 75%;
     }
 
@@ -266,8 +265,8 @@
 
 @media (max-width: 768px) {
     .main_content_wrapper {
-        width: 95%;
-        gap: 20px;
+        width: 100%;
+        gap: 30px;
         flex-direction: row-reverse;
     }
 
@@ -287,65 +286,5 @@
 
     .advantage {
         font-size: 15px;
-    }
-}
-
-@media (max-width: 425px) {
-    .main_content_wrapper {
-        width: 90%;
-        gap: 75px;
-        flex-direction: column;
-        max-height: none;
-        padding: 10px;
-    }
-
-    .conditions {
-        width: 100%;
-    }
-
-    .conditions_header {
-        font-size: 26px;
-        width: 100%;
-        line-height: 38px;
-    }
-
-    .flags_container {
-        width: 100%;
-    }
-
-    .advantages_list {
-        gap: 15px;
-    }
-
-    .advantage {
-        font-size: 16px;
-    }
-
-    .recall_form {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .recall_form_header {
-        font-size: 28px;
-        line-height: 28px;
-    }
-
-    .recall_form_annotation {
-        font-size: 14px;
-    }
-
-    .recall_from {
-        margin-bottom: 25px;
-    }
-
-    .recall_form_btn {
-        padding: 15px;
-        width: 95%;
-        margin-bottom: 10px;
-    }
-
-    .privacy_policy {
-        font-size: 13px;
     }
 }

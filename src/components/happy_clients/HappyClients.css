@@ -1,18 +1,19 @@
 .happy_clients_wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(200, 200, 200);
     padding-top: 5rem;
+    padding-bottom: 3rem;
 }
 
 .happy_clients {
     max-width: 1235px;
     width: 100%;
-    height: 80%;
+    /* height: 80%; */
     border-radius: 25px;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
@@ -48,19 +49,18 @@
     display: flex;
     overflow: hidden;
     width: 90%;
-    height: 90%;
     border-radius: 20px;
     gap: 20px;
     align-items: center;
     align-self: center;
-    padding: 0px 25px 0px 10px;
+    padding: 25px 25px 25px 10px;
 }
 
 .happy_client_card {
     cursor: pointer;
     flex: 0 0 100%;
     max-width: calc((100% / 3) - 8px);
-    height: 85%;
+    height: 500px;
     outline: 1px solid var(--black-color);
     border-radius: 32px;
     overflow: hidden;
@@ -210,7 +210,8 @@
     .happy_clients {
         gap: 8px;
         max-width: 1128px;
-        height: 90%;
+        padding: 35px;
+        /* height: 90%; */
     }
 
     .clients_carousel_controls {
@@ -218,8 +219,16 @@
         height: 74%;
     }
 
+    .happy_client_card {
+        height: 450px;
+    }
+
     .char {
         font-size: 14px;
+    }
+
+    .like_a_clients {
+        bottom: 10px;
     }
 }
 
@@ -248,7 +257,7 @@
     }
 }
 
-@media (max-width: 425px) {
+/* @media (max-width: 425px) {
     .happy_clients {
         max-width: 385px;
         height: 100%;
@@ -273,4 +282,4 @@
         height: 70%;
         top: 145px;
     }
-}
+} */

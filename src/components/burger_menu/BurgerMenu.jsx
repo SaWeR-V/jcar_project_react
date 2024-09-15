@@ -15,6 +15,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
         const burgerBtn = document.querySelector('.burger_menu_btn')
         const links = document.querySelectorAll('.burger_menu_link_item');
         const block = document.querySelector('.burger_menu_block');
+        const body = document.querySelector('body')
         
         links.forEach(link => {
             link.onclick = (event) => {
@@ -28,7 +29,7 @@ export function BurgerMenu({burgerStatus, setBurgerStatus}) {
                 block.classList.remove('hidden');
                 setFilter(null);
             });
-          }
+        }
       
         return () => {
             if (burgerBtn) {

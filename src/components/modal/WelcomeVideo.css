@@ -1,4 +1,5 @@
 .video_frame {
     width: 100%;
+    max-height: 95vh;
     border-radius: 20px;
 }
