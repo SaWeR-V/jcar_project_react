@@ -45,7 +45,10 @@ export function AboutUs() {
                     </div>
                 </div>
                 <article className="who_are_we">
-                    <h1 className='about_us_header'>Кто мы?</h1>
+                    <div className="who_are_we_heading">
+                        <h1 className='about_us_header'>Кто мы?</h1>
+
+                    </div>
                     <p className='who_are_we_paragraph'>
                         JCAR — это надёжная компания работающая на рынке РФ уже более 10 лет.
                         Мы специализируемся на покупке и доставке автомобилей с аукционов Японии, Китая и Южной Кореи, предлагаем широкий ассортимент транспортных средств, включая легковые автомобили, мототехнику, грузовики, спецтехнику и многое другое.

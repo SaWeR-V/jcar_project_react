@@ -39,7 +39,7 @@
     position: absolute;
     top: 95px;
     width: 450px;
-    height: 580px;
+    height: 540px;
     display: flex;
     justify-content: space-between;
     z-index: 1;
@@ -72,7 +72,7 @@
 .cards_container {
     display: flex;
     width: 375px;
-    height: 580px;
+    height: 540px;
     border-radius: 15px;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
     position: relative;

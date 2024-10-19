@@ -5,16 +5,16 @@ export const autos = [
         power: '109 л.с.',
         engine: '1.5 л.',
         transmission: 'CVT',
-        price: '1 000 000',
+        price: '850 000',
         image: "/images/cars/toyota_allion.jpg",
     },
     {
-        name: "Daihatsu Thor",
+        name: "Toyota Tank",
         type: "Хэтчбек",
         power: '69 л.с.',
         engine: '1.0 л.',
         transmission: 'CVT',
-        price: '1 200 000',
+        price: '750 000',
         image: "/images/cars/daihatsu_thor.jpg"
     },
     {
@@ -32,7 +32,7 @@ export const autos = [
         power: '150 л.с.',
         engine: '1.5 л.',
         transmission: 'CVT',
-        price: '2 100 000',
+        price: '1 600 000',
         image: "/images/cars/honda_stepwgn_modulo_x.jpg"
     },
     {
@@ -41,7 +41,7 @@ export const autos = [
         power: '64 л.с.',
         engine: '0.7 л.',
         transmission: 'CVT',
-        price: '850 000',
+        price: '700 000',
         image: "/images/cars/toyota_pixis_joy.jpg"
     },
     {
@@ -59,7 +59,7 @@ export const autos = [
         power: '52 л.с.',
         engine: '0.7 л.',
         transmission: 'CVT',
-        price: '1 350 000',
+        price: '950 000',
         image: "/images/cars/daihatsu_taft.jpg"
     },
     {
@@ -68,7 +68,7 @@ export const autos = [
         power: '117 л.с.',
         engine: '1.6 л.',
         transmission: 'MT',
-        price: '1 100 000',
+        price: '1 000 000',
         image: "/images/cars/suzuki_sx4.jpg"
     },
     {
@@ -77,7 +77,7 @@ export const autos = [
         power: '88 л.с.',
         engine: '1.3 л.',
         transmission: 'CVT',
-        price: '950 000',
+        price: '900 000',
         image: "/images/cars/honda_fit_shuttle.jpg"
     },
     {
@@ -86,7 +86,7 @@ export const autos = [
         power: '121 л.с.',
         engine: '1.5 л.',
         transmission: 'CVT',
-        price: '1 630 000',
+        price: '1 330 000',
         image: "/images/cars/toyota_corolla_hybrid.jpg"
     },
     {
@@ -95,7 +95,7 @@ export const autos = [
         power: '110 л.с.',
         engine: '1.5 л.',
         transmission: 'CVT',
-        price: '1 690 000',
+        price: '1 190 000',
         image: "/images/cars/honda_freed.jpg"
     },
     {
@@ -104,7 +104,7 @@ export const autos = [
         power: '152 л.с.',
         engine: '2.0 л.',
         transmission: 'CVT',
-        price: '2 000 000',
+        price: '1 700 000',
         image: "/images/cars/toyota_noah.jpg"
     },
     {
@@ -113,7 +113,7 @@ export const autos = [
         power: '182 л.с.',
         engine: '2.5 л.',
         transmission: 'AT',
-        price: '4 700 000',
+        price: '2 300 000',
         image: "/images/cars/toyota_alphard.jpg"
     },
     {
@@ -131,7 +131,7 @@ export const autos = [
         power: '182 л.с.',
         engine: '1.5 л.',
         transmission: 'CVT',
-        price: '1 727 292',
+        price: '1 527 292',
         image: "/images/cars/honda_civic_std.jpg"
     },
     {
@@ -140,7 +140,7 @@ export const autos = [
         power: '130 л.с.',
         engine: '1.8 л.',
         transmission: 'CVT',
-        price: '1 200 000',
+        price: '1 100 000',
         image: "/images/cars/toyota_isis.jpg"
     }
 ]
