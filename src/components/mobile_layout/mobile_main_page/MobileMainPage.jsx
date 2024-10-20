@@ -84,9 +84,7 @@ export function MobileMainPage() {
                                 </label>
                                 <label className='recall_from_item other_city_label'>
                                     <input className="radio_option" type="radio" name="radio_option" id="radioOther" required/>Другой город
-                                    <div className="other_city">
-                                        <input type="text" className="input_row your_city" name="other_city" required placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
-                                    </div> 
+                                    <input type="text" className="input_row input_row_other_city invisible" name="other_city" disabled placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
                                 </label>
                             </div>
                         </div>
