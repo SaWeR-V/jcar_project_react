@@ -61,7 +61,7 @@ export function WorkingScheme() {
                     </div>
                     <div className="working_stage_block invisible">
                         <h3 className="working_stage_block_header"><span className='working_stage_step'>6</span>Доставка в Россию</h3>
-                        <p className="working_stage_block_text">Готовим документы и экспортируем автомобиль из Японии, Китая ли Кореи в Россию</p>
+                        <p className="working_stage_block_text">Готовим документы и экспортируем автомобиль из Японии, Китая или Кореи в Россию</p>
                     </div>
                 </div>
             </div>

@@ -64,7 +64,7 @@ export function MainContent() {
                     <form className='inputs' id='bot_response' onInput={() => checkInputs('.recall_form_btn', '.input_row, .radio_option')}>
                         <input type="text" className="input_row" name="name" required placeholder='Ваше имя'/>
                         <input type="text" className="input_row" name="phone" required placeholder='Ваш номер телефона'/>
-                        <textarea type="text" className="input_row last_row" name="comment" required placeholder='Желаемая марка, модель, год, объём двигателя и прочие комментарии'/>
+                        <textarea className="input_row last_row" name="comment" required placeholder='Желаемая марка, модель, год, объём двигателя и прочие комментарии'/>
 
                         <div className='recall_from'>
                             <p>Укажите, откуда вам перезвонить?</p>
@@ -80,7 +80,7 @@ export function MainContent() {
                                 </label>
                                 <label className='recall_from_item'>
                                     <input className="radio_option" type="radio" name="radio_option" id="radioOther" required/>Другой город
-                                    <input type="text" className="input_row" name="other_city" required placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
+                                    <input type="text" className="input_row input_row_other_city invisible" name="other_city" disabled placeholder='Введите название' onInput={(e) => e.target.closest('.recall_from_item').querySelector('.radio_option').value = e.target.value}/>
                                 </label>
                             </div>
                         </div>
